@@ -1,0 +1,5 @@
+bin/
+# `go build ./cmd/x` without -o drops the binary in the working tree.
+/ack
+go.work
+go.work.sum
