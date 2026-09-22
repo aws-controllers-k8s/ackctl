@@ -1,0 +1,71 @@
+{
+  "Name": "elasticloadbalancing",
+  "Resources": [
+    {
+      "Name": "listener-rule/app",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}"
+      ]
+    },
+    {
+      "Name": "listener-rule/net",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}"
+      ]
+    },
+    {
+      "Name": "listener/app",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}"
+      ]
+    },
+    {
+      "Name": "listener/gwy",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/gwy/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}"
+      ]
+    },
+    {
+      "Name": "listener/net",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}"
+      ]
+    },
+    {
+      "Name": "loadbalancer",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}"
+      ]
+    },
+    {
+      "Name": "loadbalancer/app/",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}"
+      ]
+    },
+    {
+      "Name": "loadbalancer/gwy/",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/gwy/${LoadBalancerName}/${LoadBalancerId}"
+      ]
+    },
+    {
+      "Name": "loadbalancer/net/",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}"
+      ]
+    },
+    {
+      "Name": "targetgroup",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}"
+      ]
+    },
+    {
+      "Name": "truststore",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:truststore/${TrustStoreName}/${TrustStoreId}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "s3files",
+  "Resources": [
+    {
+      "Name": "access-point",
+      "ARNFormats": [
+        "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}/access-point/${AccessPointId}"
+      ]
+    },
+    {
+      "Name": "file-system",
+      "ARNFormats": [
+        "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}"
+      ]
+    }
+  ]
+}

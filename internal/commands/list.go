@@ -112,11 +112,8 @@ func runList(cmd *cobra.Command, _ []string) error {
 		if listService != "" && !strings.EqualFold(r.Service, listService) {
 			continue
 		}
-		keys := make([]string, 0, len(r.Bindings))
-		for _, b := range r.Bindings {
-			keys = append(keys, b.Key)
-		}
-		fmt.Fprintf(w, "%s\t%s\t%s\t%s\n", r.Service, r.Kind, r.ResourceTypeFilter, strings.Join(keys, ","))
+		fmt.Fprintf(w, "%s\t%s\t%s\t%s\n", r.Service, r.Kind, r.ResourceTypeFilter,
+			strings.Join(r.IdentifierKeys(), ","))
 	}
 	return w.Flush()
 }

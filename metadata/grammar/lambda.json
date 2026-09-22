@@ -1,0 +1,71 @@
+{
+  "Name": "lambda",
+  "Resources": [
+    {
+      "Name": "capacityProvider",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:capacity-provider:${CapacityProviderName}"
+      ]
+    },
+    {
+      "Name": "code signing config",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:code-signing-config:${CodeSigningConfigId}"
+      ]
+    },
+    {
+      "Name": "durable execution",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}/durable-execution/${ExecutionName}/${ExecutionId}"
+      ]
+    },
+    {
+      "Name": "eventSourceMapping",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}"
+      ]
+    },
+    {
+      "Name": "function",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}"
+      ]
+    },
+    {
+      "Name": "function alias",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}"
+      ]
+    },
+    {
+      "Name": "function version",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}"
+      ]
+    },
+    {
+      "Name": "layer",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}"
+      ]
+    },
+    {
+      "Name": "layerVersion",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}"
+      ]
+    },
+    {
+      "Name": "microvmImage",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:microvm-image:${MicrovmImageName}"
+      ]
+    },
+    {
+      "Name": "networkConnector",
+      "ARNFormats": [
+        "arn:${Partition}:lambda:${Region}:${Account}:network-connector:${NetworkConnectorId}"
+      ]
+    }
+  ]
+}

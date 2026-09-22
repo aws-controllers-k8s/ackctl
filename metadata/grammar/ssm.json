@@ -1,0 +1,137 @@
+{
+  "Name": "ssm",
+  "Resources": [
+    {
+      "Name": "association",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:association/${AssociationId}"
+      ]
+    },
+    {
+      "Name": "automation-definition",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:automation-definition/${AutomationDefinitionName}:${VersionId}"
+      ]
+    },
+    {
+      "Name": "automation-execution",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:automation-execution/${AutomationExecutionId}"
+      ]
+    },
+    {
+      "Name": "bucket",
+      "ARNFormats": [
+        "arn:${Partition}:s3:::${BucketName}"
+      ]
+    },
+    {
+      "Name": "cloud-connector",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:cloud-connector/${CloudConnectorId}"
+      ]
+    },
+    {
+      "Name": "document",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:document/${DocumentName}"
+      ]
+    },
+    {
+      "Name": "iam-role",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:role/${RoleName}"
+      ]
+    },
+    {
+      "Name": "instance",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}"
+      ]
+    },
+    {
+      "Name": "maintenancewindow",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:maintenancewindow/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "managed-instance",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:managed-instance/${InstanceId}"
+      ]
+    },
+    {
+      "Name": "managed-instance-inventory",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:managed-instance-inventory/${InstanceId}"
+      ]
+    },
+    {
+      "Name": "opsitem",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:opsitem/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "opsitemgroup",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:opsitemgroup/default"
+      ]
+    },
+    {
+      "Name": "opsmetadata",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:opsmetadata/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "parameter",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:parameter/${ParameterNameWithoutLeadingSlash}"
+      ]
+    },
+    {
+      "Name": "patchbaseline",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:patchbaseline/${PatchBaselineIdResourceId}"
+      ]
+    },
+    {
+      "Name": "resourcedatasync",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:resource-data-sync/${SyncName}"
+      ]
+    },
+    {
+      "Name": "servicesetting",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:servicesetting/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "session",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:session/${SessionId}"
+      ]
+    },
+    {
+      "Name": "task",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}"
+      ]
+    },
+    {
+      "Name": "windowtarget",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:windowtarget/${WindowTargetId}"
+      ]
+    },
+    {
+      "Name": "windowtask",
+      "ARNFormats": [
+        "arn:${Partition}:ssm:${Region}:${Account}:windowtask/${WindowTaskId}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "Name": "s3",
+  "Resources": [
+    {
+      "Name": "accessgrant",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:access-grants/default/grant/${Token}"
+      ]
+    },
+    {
+      "Name": "accessgrantsinstance",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:access-grants/default"
+      ]
+    },
+    {
+      "Name": "accessgrantslocation",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:access-grants/default/location/${Token}"
+      ]
+    },
+    {
+      "Name": "accesspoint",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}"
+      ]
+    },
+    {
+      "Name": "accesspointobject",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}/object/${ObjectName}"
+      ]
+    },
+    {
+      "Name": "bucket",
+      "ARNFormats": [
+        "arn:${Partition}:s3:::${BucketName}"
+      ]
+    },
+    {
+      "Name": "job",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:job/${JobId}"
+      ]
+    },
+    {
+      "Name": "multiregionaccesspoint",
+      "ARNFormats": [
+        "arn:${Partition}:s3::${Account}:accesspoint/${AccessPointAlias}"
+      ]
+    },
+    {
+      "Name": "multiregionaccesspointrequestarn",
+      "ARNFormats": [
+        "arn:${Partition}:s3:us-west-2:${Account}:async-request/mrap/${Operation}/${Token}"
+      ]
+    },
+    {
+      "Name": "object",
+      "ARNFormats": [
+        "arn:${Partition}:s3:::${BucketName}/${ObjectName}"
+      ]
+    },
+    {
+      "Name": "objectlambdaaccesspoint",
+      "ARNFormats": [
+        "arn:${Partition}:s3-object-lambda:${Region}:${Account}:accesspoint/${AccessPointName}"
+      ]
+    },
+    {
+      "Name": "storagelensconfiguration",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:storage-lens/${ConfigId}"
+      ]
+    },
+    {
+      "Name": "storagelensgroup",
+      "ARNFormats": [
+        "arn:${Partition}:s3:${Region}:${Account}:storage-lens-group/${Name}"
+      ]
+    }
+  ]
+}

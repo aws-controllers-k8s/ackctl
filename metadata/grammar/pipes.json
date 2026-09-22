@@ -1,0 +1,11 @@
+{
+  "Name": "pipes",
+  "Resources": [
+    {
+      "Name": "pipe",
+      "ARNFormats": [
+        "arn:${Partition}:pipes:${Region}:${Account}:pipe/${Name}"
+      ]
+    }
+  ]
+}

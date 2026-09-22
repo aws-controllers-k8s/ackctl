@@ -1,0 +1,360 @@
+{
+  "_comment": "Controller releases the committed catalog was derived from. Written by cmd/ack-catalog-gen. DO NOT EDIT BY HAND.",
+  "repos": [
+    {
+      "repo": "acm-controller",
+      "tag": "v1.8.1",
+      "commit": "2391bb23b4ab9a7a269ac3789a7a60f8642a75e3"
+    },
+    {
+      "repo": "acmpca-controller",
+      "tag": "v1.5.0",
+      "commit": "3a8c615ab2d18cb4387bf197aaf5ddff220d4c5c"
+    },
+    {
+      "repo": "apigateway-controller",
+      "tag": "v1.9.0",
+      "commit": "2adb6c7737b3d42418285bb6ec4e0a0dc5dd7268"
+    },
+    {
+      "repo": "apigatewayv2-controller",
+      "tag": "v1.5.0",
+      "commit": "70aeef184e5bd40cacede976f58d71629585460e"
+    },
+    {
+      "repo": "applicationautoscaling-controller",
+      "tag": "v1.7.0",
+      "commit": "2e69019554454579c3b9d8764a65d2f7116a6804"
+    },
+    {
+      "repo": "athena-controller",
+      "tag": "v1.8.0",
+      "commit": "7524b2f56974814b93a9a11c2684d582da01f991"
+    },
+    {
+      "repo": "autoscaling-controller",
+      "tag": "v1.3.0",
+      "commit": "4c4efcba6bd24330788fc63a51d298aae3d3b992"
+    },
+    {
+      "repo": "backup-controller",
+      "tag": "v1.2.0",
+      "commit": "e23d8225f6e1660c6455447638a270d23964faa4"
+    },
+    {
+      "repo": "bedrock-controller",
+      "tag": "v1.4.0",
+      "commit": "e9f32d89d2459bd97fc2431959a5b40a3e5610c1"
+    },
+    {
+      "repo": "bedrockagent-controller",
+      "tag": "v1.4.1",
+      "commit": "354ed41e79f23fe0152cc574eeb72e964db460e3"
+    },
+    {
+      "repo": "bedrockagentcorecontrol-controller",
+      "tag": "v1.15.0",
+      "commit": "c0e3dd235c06053191797eda1781935405094120"
+    },
+    {
+      "repo": "cloudfront-controller",
+      "tag": "v1.8.0",
+      "commit": "4e9a3eb6d838791434c4039f0e631cb0219de064"
+    },
+    {
+      "repo": "cloudtrail-controller",
+      "tag": "v1.7.0",
+      "commit": "ec6ff7806f974f10980658dec1610020640ecf6d"
+    },
+    {
+      "repo": "cloudwatch-controller",
+      "tag": "v1.9.0",
+      "commit": "d312f9aed03bef83df5b771fa0e37cd2051d0d66"
+    },
+    {
+      "repo": "cloudwatchlogs-controller",
+      "tag": "v1.6.1",
+      "commit": "c719b4157c112b69b028fc3ac7c721c917dbe8f6"
+    },
+    {
+      "repo": "codeartifact-controller",
+      "tag": "v1.7.0",
+      "commit": "08089f4c21e37897f2640623956424c0d7271041"
+    },
+    {
+      "repo": "cognitoidentityprovider-controller",
+      "tag": "v1.7.0",
+      "commit": "497e481283d654018b6c078181287e06d09cebbb"
+    },
+    {
+      "repo": "dms-controller",
+      "tag": "v0.2.2",
+      "commit": "c985673db9e59c2f76ec4a15c8ebaf6c36336a45"
+    },
+    {
+      "repo": "documentdb-controller",
+      "tag": "v1.7.0",
+      "commit": "072bfcb6e6f388a076dc1ee723e6afa8db28ca2d"
+    },
+    {
+      "repo": "dsql-controller",
+      "tag": "v1.2.0",
+      "commit": "4f2284b7310247a7a0c3b38713a026c85788ad91"
+    },
+    {
+      "repo": "dynamodb-controller",
+      "tag": "v1.12.0",
+      "commit": "91542175598b3efb70e947eb75d4b4bb2baa6da4"
+    },
+    {
+      "repo": "ec2-controller",
+      "tag": "v1.21.0",
+      "commit": "2610d96b694c73ba883f96cc68faaecc3c707287"
+    },
+    {
+      "repo": "ecr-controller",
+      "tag": "v1.9.0",
+      "commit": "adbed20fab451948d2ce1493a71458754a3115af"
+    },
+    {
+      "repo": "ecrpublic-controller",
+      "tag": "v1.5.0",
+      "commit": "06d29092a7b4dfaf3d4a7eafc07ff8d8cc09bdfe"
+    },
+    {
+      "repo": "ecs-controller",
+      "tag": "v1.7.0",
+      "commit": "f447f524d4fd6ebff5cd1234754189c0a7a65171"
+    },
+    {
+      "repo": "efs-controller",
+      "tag": "v1.6.0",
+      "commit": "464967c848fe80ad1e0b6de24ac77aacefc4b3f6"
+    },
+    {
+      "repo": "eks-controller",
+      "tag": "v1.23.1",
+      "commit": "f192187f660d9a6e2f22dd51b960960452d168a6"
+    },
+    {
+      "repo": "elasticache-controller",
+      "tag": "v1.9.0",
+      "commit": "a2ad96b6b909de7cf152058b4c6afe9e696d0e4a"
+    },
+    {
+      "repo": "elbv2-controller",
+      "tag": "v1.7.0",
+      "commit": "f2b247885bbc8823018153d6b83d82d4f9c42226"
+    },
+    {
+      "repo": "emr-controller",
+      "tag": "v0.2.1",
+      "commit": "b130bca235f82a801f153fbc829b84b4aec1ce38"
+    },
+    {
+      "repo": "emrcontainers-controller",
+      "tag": "v1.7.0",
+      "commit": "94f0a68f62271b239a83601c49460189b17515f0"
+    },
+    {
+      "repo": "emrserverless-controller",
+      "tag": "v1.2.0",
+      "commit": "c0be92f686cbd5022bab9165669f5cef56549b6c"
+    },
+    {
+      "repo": "eventbridge-controller",
+      "tag": "v1.7.0",
+      "commit": "b0e70ab83c0c6e3dda931af0a4cffd54db8f52c5"
+    },
+    {
+      "repo": "firehose-controller",
+      "tag": "v0.5.0",
+      "commit": "cb5e12d9e41f2324d3c28ed91a59521b07e08a1c"
+    },
+    {
+      "repo": "glue-controller",
+      "tag": "v1.2.1",
+      "commit": "28863d8bc30bed3f99d664a06434149580230c77"
+    },
+    {
+      "repo": "iam-controller",
+      "tag": "v1.9.0",
+      "commit": "d833abad99824041bf62ee3a0ca0f0206cb4eb46"
+    },
+    {
+      "repo": "kafka-controller",
+      "tag": "v1.12.0",
+      "commit": "cfaf098e8abfe1fe7cf4548d119bbb72fd8f3eb2"
+    },
+    {
+      "repo": "keyspaces-controller",
+      "tag": "v1.6.0",
+      "commit": "9d07da450407b60d823760f0a8f157969db0b4b0"
+    },
+    {
+      "repo": "kinesis-controller",
+      "tag": "v1.5.0",
+      "commit": "31800d8d88a0675013a49887f903c6361e271e5d"
+    },
+    {
+      "repo": "kms-controller",
+      "tag": "v1.5.0",
+      "commit": "f5b8677dd03180a3684bb203cd40919a222228bf"
+    },
+    {
+      "repo": "lambda-controller",
+      "tag": "v1.17.2",
+      "commit": "785ead9d4c59c1e94f1874411e33a912f415a053"
+    },
+    {
+      "repo": "lambdamicrovms-controller",
+      "tag": "v0.3.2",
+      "commit": "289e415303b26f391d4553bc8609afe5b2d79d8d"
+    },
+    {
+      "repo": "memorydb-controller",
+      "tag": "v1.7.0",
+      "commit": "f12eef86ebcb4cbf7c770fb73140916a3bb38401"
+    },
+    {
+      "repo": "mq-controller",
+      "tag": "v1.6.0",
+      "commit": "40ad3ac84e082d4fde7f6ff131a9b5a7171648b9"
+    },
+    {
+      "repo": "mwaa-controller",
+      "tag": "v1.2.0",
+      "commit": "3ecbaf8422c66133b177d4d0f5a64ba313411525"
+    },
+    {
+      "repo": "mwaaserverless-controller",
+      "tag": "v0.1.1",
+      "commit": "91f8e79a732dabaedeb4c28f48db97b039d997d6"
+    },
+    {
+      "repo": "networkfirewall-controller",
+      "tag": "v1.5.0",
+      "commit": "dc9bca896429b04edd7ab165033937e40e7d710d"
+    },
+    {
+      "repo": "opensearchserverless-controller",
+      "tag": "v1.2.0",
+      "commit": "29e1a78f229c0b8396e4da77aa1a042a3cb210ea"
+    },
+    {
+      "repo": "opensearchservice-controller",
+      "tag": "v1.6.2",
+      "commit": "760d7aafafff351c2de8a2d80c2b352d7fec1e57"
+    },
+    {
+      "repo": "organizations-controller",
+      "tag": "v1.5.0",
+      "commit": "27c476bb2854938197547af79fb91560b12e3741"
+    },
+    {
+      "repo": "pipes-controller",
+      "tag": "v1.6.0",
+      "commit": "5c7c0d122676f902aab49619af97fc0247d0915b"
+    },
+    {
+      "repo": "prometheusservice-controller",
+      "tag": "v1.7.0",
+      "commit": "6a694b9638748972939107555a5032add3cc04cd"
+    },
+    {
+      "repo": "quicksight-controller",
+      "tag": "v1.1.2",
+      "commit": "e41d3a16d87620ee9f25989c4f671e7a268e0abb"
+    },
+    {
+      "repo": "ram-controller",
+      "tag": "v1.5.0",
+      "commit": "4bfb164f53a70cc1afb183257ba71cab06100725"
+    },
+    {
+      "repo": "rds-controller",
+      "tag": "v1.12.0",
+      "commit": "80cee824ec25065839ac9b77f7b0cecc1903f6ba"
+    },
+    {
+      "repo": "recyclebin-controller",
+      "tag": "v1.5.0",
+      "commit": "8356d7ec6de7dce379d36f1f6e6b679a6d0473c8"
+    },
+    {
+      "repo": "route53-controller",
+      "tag": "v1.6.0",
+      "commit": "8fec4893cb3044895c71b9566b710c1ec3ec27d6"
+    },
+    {
+      "repo": "route53resolver-controller",
+      "tag": "v1.9.0",
+      "commit": "e2e451cb11f63f436cc6d368d47faa79d6381a66"
+    },
+    {
+      "repo": "s3-controller",
+      "tag": "v1.12.0",
+      "commit": "607414d6db244b2abfa8f006069add7b0b5922ae"
+    },
+    {
+      "repo": "s3control-controller",
+      "tag": "v1.6.1",
+      "commit": "840965e1dde558bf0a8d390ce9285f21c9277ec2"
+    },
+    {
+      "repo": "s3files-controller",
+      "tag": "v1.2.0",
+      "commit": "56182b60cb16bbf4e4ee390621ecf907602d9cf8"
+    },
+    {
+      "repo": "s3tables-controller",
+      "tag": "v1.2.0",
+      "commit": "81218c9cd225638a89c73da0922be5690bfa8b59"
+    },
+    {
+      "repo": "s3vectors-controller",
+      "tag": "v1.2.0",
+      "commit": "ff803947afb487784a1ca0f0e593b47526ea8e96"
+    },
+    {
+      "repo": "sagemaker-controller",
+      "tag": "v1.10.0",
+      "commit": "fa23cb4a29e76a172b897c818d99962932fde3fa"
+    },
+    {
+      "repo": "secretsmanager-controller",
+      "tag": "v1.6.0",
+      "commit": "e6bb502e0a77788c12b42c1157c976fe84b60f91"
+    },
+    {
+      "repo": "ses-controller",
+      "tag": "v1.5.0",
+      "commit": "f2d47c945f446b7a42c8df4ca0960cdd56f52c32"
+    },
+    {
+      "repo": "sfn-controller",
+      "tag": "v1.6.0",
+      "commit": "ec1df41bb235afc0be8e5ed644151596c2090208"
+    },
+    {
+      "repo": "sns-controller",
+      "tag": "v1.10.1",
+      "commit": "fcc54c25e69f541b3e76f282f314bdaf5bde0a47"
+    },
+    {
+      "repo": "sqs-controller",
+      "tag": "v1.7.0",
+      "commit": "3db5cb8ead2362970cd1ad2fd5bcdaa31b395c0e"
+    },
+    {
+      "repo": "ssm-controller",
+      "tag": "v1.6.0",
+      "commit": "747f34d3a978d5c200426615cfdd0d959baa22e1"
+    },
+    {
+      "repo": "wafv2-controller",
+      "tag": "v1.6.0",
+      "commit": "356e6f3bbe727110ebcd4afe5ed4b76b68a2c793"
+    }
+  ]
+}

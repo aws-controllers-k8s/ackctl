@@ -1,0 +1,29 @@
+{
+  "Name": "codeartifact",
+  "Resources": [
+    {
+      "Name": "domain",
+      "ARNFormats": [
+        "arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}"
+      ]
+    },
+    {
+      "Name": "package",
+      "ARNFormats": [
+        "arn:${Partition}:codeartifact:${Region}:${Account}:package/${DomainName}/${RepositoryName}/${PackageFormat}/${PackageNamespace}/${PackageName}"
+      ]
+    },
+    {
+      "Name": "package-group",
+      "ARNFormats": [
+        "arn:${Partition}:codeartifact:${Region}:${Account}:package-group/${DomainName}${EncodedPackageGroupPattern}"
+      ]
+    },
+    {
+      "Name": "repository",
+      "ARNFormats": [
+        "arn:${Partition}:codeartifact:${Region}:${Account}:repository/${DomainName}/${RepositoryName}"
+      ]
+    }
+  ]
+}

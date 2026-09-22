@@ -1,0 +1,11 @@
+{
+  "Name": "acm-pca",
+  "Resources": [
+    {
+      "Name": "certificate-authority",
+      "ARNFormats": [
+        "arn:${Partition}:acm-pca:${Region}:${Account}:certificate-authority/${CertificateAuthorityId}"
+      ]
+    }
+  ]
+}

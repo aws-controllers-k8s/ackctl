@@ -1,0 +1,59 @@
+{
+  "Name": "route53",
+  "Resources": [
+    {
+      "Name": "change",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::change/${Id}"
+      ]
+    },
+    {
+      "Name": "cidrcollection",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::cidrcollection/${Id}"
+      ]
+    },
+    {
+      "Name": "delegationset",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::delegationset/${Id}"
+      ]
+    },
+    {
+      "Name": "healthcheck",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::healthcheck/${Id}"
+      ]
+    },
+    {
+      "Name": "hostedzone",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::hostedzone/${Id}"
+      ]
+    },
+    {
+      "Name": "queryloggingconfig",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::queryloggingconfig/${Id}"
+      ]
+    },
+    {
+      "Name": "trafficpolicy",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::trafficpolicy/${Id}"
+      ]
+    },
+    {
+      "Name": "trafficpolicyinstance",
+      "ARNFormats": [
+        "arn:${Partition}:route53:::trafficpolicyinstance/${Id}"
+      ]
+    },
+    {
+      "Name": "vpc",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}"
+      ]
+    }
+  ]
+}

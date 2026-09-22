@@ -1,0 +1,23 @@
+{
+  "Name": "aoss",
+  "Resources": [
+    {
+      "Name": "Collection",
+      "ARNFormats": [
+        "arn:${Partition}:aoss:${Region}:${Account}:collection/${CollectionId}"
+      ]
+    },
+    {
+      "Name": "CollectionGroup",
+      "ARNFormats": [
+        "arn:${Partition}:aoss:${Region}:${Account}:collection-group/${CollectionGroupId}"
+      ]
+    },
+    {
+      "Name": "Dashboards",
+      "ARNFormats": [
+        "arn:${Partition}:aoss:${Region}:${Account}:dashboards/default"
+      ]
+    }
+  ]
+}

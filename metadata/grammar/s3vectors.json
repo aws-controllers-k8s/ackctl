@@ -1,0 +1,17 @@
+{
+  "Name": "s3vectors",
+  "Resources": [
+    {
+      "Name": "Index",
+      "ARNFormats": [
+        "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}/index/${IndexName}"
+      ]
+    },
+    {
+      "Name": "VectorBucket",
+      "ARNFormats": [
+        "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}"
+      ]
+    }
+  ]
+}

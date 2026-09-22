@@ -1,0 +1,233 @@
+{
+  "Name": "quicksight",
+  "Resources": [
+    {
+      "Name": "account",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:account/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "actionconnector",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:action-connector/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "agent",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:agent/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "analysis",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:analysis/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "app",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:app/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "approvalPolicy",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:approval-policy/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "assetBundleExportJob",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:asset-bundle-export-job/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "assetBundleImportJob",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:asset-bundle-import-job/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "assignment",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "automation",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:automation-group/${AutomationGroupId}/automation/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "automationGroup",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:automation-group/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "automationJob",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:automation-group/${AutomationGroupId}/automation/${AutomationId}/job/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "brand",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:brand/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "customization",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:customization/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "custompermissions",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:custompermissions/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "dashboard",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "dashboardSnapshotJob",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${DashboardId}/snapshot-job/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "dataset",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "datasource",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:datasource/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "dlpSetting",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:dlpsetting/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "emailCustomizationTemplate",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:email-customization-template/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "extension",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:extension/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "extensionaccess",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:extension-access/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "flow",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:flow/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "folder",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:folder/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "group",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:group/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "ingestion",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${DatasetId}/ingestion/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "knowledgeBase",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:knowledge-base/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "limitsProfile",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:limits-profile/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "namespace",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:namespace/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "oauthClientApplication",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:oauthClientApplication/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "refreshschedule",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${DatasetId}/refresh-schedule/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "space",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:space/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "template",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "theme",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:theme/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "topic",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:topic/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "user",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:user/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "vpcconnection",
+      "ARNFormats": [
+        "arn:${Partition}:quicksight:${Region}:${Account}:vpcConnection/${ResourceId}"
+      ]
+    }
+  ]
+}

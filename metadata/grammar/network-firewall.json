@@ -1,0 +1,65 @@
+{
+  "Name": "network-firewall",
+  "Resources": [
+    {
+      "Name": "ContainerAssociation",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:container-association/${Name}"
+      ]
+    },
+    {
+      "Name": "Firewall",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:firewall/${Name}"
+      ]
+    },
+    {
+      "Name": "FirewallPolicy",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy/${Name}"
+      ]
+    },
+    {
+      "Name": "Proxy",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:proxy/${Name}"
+      ]
+    },
+    {
+      "Name": "ProxyConfiguration",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:proxy-configuration/${Name}"
+      ]
+    },
+    {
+      "Name": "ProxyRuleGroup",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:proxy-rule-group/${Name}"
+      ]
+    },
+    {
+      "Name": "StatefulRuleGroup",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:stateful-rulegroup/${Name}"
+      ]
+    },
+    {
+      "Name": "StatelessRuleGroup",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:stateless-rulegroup/${Name}"
+      ]
+    },
+    {
+      "Name": "TLSInspectionConfiguration",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:tls-configuration/${Name}"
+      ]
+    },
+    {
+      "Name": "VpcEndpointAssociation",
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:vpc-endpoint-association/${Name}"
+      ]
+    }
+  ]
+}

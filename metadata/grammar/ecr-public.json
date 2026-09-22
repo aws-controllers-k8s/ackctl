@@ -1,0 +1,17 @@
+{
+  "Name": "ecr-public",
+  "Resources": [
+    {
+      "Name": "registry",
+      "ARNFormats": [
+        "arn:${Partition}:ecr-public::${Account}:registry/${RegistryId}"
+      ]
+    },
+    {
+      "Name": "repository",
+      "ARNFormats": [
+        "arn:${Partition}:ecr-public::${Account}:repository/${RepositoryName}"
+      ]
+    }
+  ]
+}

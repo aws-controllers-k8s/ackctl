@@ -1,0 +1,17 @@
+{
+  "Name": "s3tables",
+  "Resources": [
+    {
+      "Name": "Table",
+      "ARNFormats": [
+        "arn:${Partition}:s3tables:${Region}:${Account}:bucket/${TableBucketName}/table/${TableID}"
+      ]
+    },
+    {
+      "Name": "TableBucket",
+      "ARNFormats": [
+        "arn:${Partition}:s3tables:${Region}:${Account}:bucket/${TableBucketName}"
+      ]
+    }
+  ]
+}

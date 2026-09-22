@@ -1,0 +1,83 @@
+{
+  "Name": "ecs",
+  "Resources": [
+    {
+      "Name": "capacity-provider",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}"
+      ]
+    },
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}"
+      ]
+    },
+    {
+      "Name": "container-instance",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ClusterName}/${ContainerInstanceId}"
+      ]
+    },
+    {
+      "Name": "daemon",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:daemon/${ClusterName}/${DaemonName}"
+      ]
+    },
+    {
+      "Name": "daemon-deployment",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:daemon-deployment/${ClusterName}/${DaemonName}/${DaemonDeploymentId}"
+      ]
+    },
+    {
+      "Name": "daemon-revision",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:daemon-revision/${ClusterName}/${DaemonName}/${DaemonRevisionId}"
+      ]
+    },
+    {
+      "Name": "daemon-task-definition",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:daemon-task-definition/${DaemonTaskDefinitionFamilyName}:${DaemonTaskDefinitionRevisionNumber}"
+      ]
+    },
+    {
+      "Name": "service",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:service/${ClusterName}/${ServiceName}"
+      ]
+    },
+    {
+      "Name": "service-deployment",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:service-deployment/${ClusterName}/${ServiceName}/${ServiceDeploymentId}"
+      ]
+    },
+    {
+      "Name": "service-revision",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:service-revision/${ClusterName}/${ServiceName}/${ServiceRevisionId}"
+      ]
+    },
+    {
+      "Name": "task",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:task/${ClusterName}/${TaskId}"
+      ]
+    },
+    {
+      "Name": "task-definition",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}"
+      ]
+    },
+    {
+      "Name": "task-set",
+      "ARNFormats": [
+        "arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}"
+      ]
+    }
+  ]
+}

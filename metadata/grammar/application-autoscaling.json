@@ -1,0 +1,11 @@
+{
+  "Name": "application-autoscaling",
+  "Resources": [
+    {
+      "Name": "ScalableTarget",
+      "ARNFormats": [
+        "arn:${Partition}:application-autoscaling:${Region}:${Account}:scalable-target/${ResourceId}"
+      ]
+    }
+  ]
+}

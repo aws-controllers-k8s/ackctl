@@ -1,0 +1,53 @@
+{
+  "Name": "cloudwatch",
+  "Resources": [
+    {
+      "Name": "alarm",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}"
+      ]
+    },
+    {
+      "Name": "alarm-mute-rule",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch:${Region}:${Account}:alarm-mute-rule:${AlarmMuteRuleName}"
+      ]
+    },
+    {
+      "Name": "dashboard",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}"
+      ]
+    },
+    {
+      "Name": "dataset",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch:${Region}:${Account}:dataset/${DatasetId}"
+      ]
+    },
+    {
+      "Name": "insight-rule",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}"
+      ]
+    },
+    {
+      "Name": "metric-stream",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch:${Region}:${Account}:metric-stream/${MetricStreamName}"
+      ]
+    },
+    {
+      "Name": "service",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch:${Region}:${Account}:service/${ServiceName}-${UniqueAttributesHex}"
+      ]
+    },
+    {
+      "Name": "slo",
+      "ARNFormats": [
+        "arn:${Partition}:cloudwatch:${Region}:${Account}:slo/${SloName}"
+      ]
+    }
+  ]
+}

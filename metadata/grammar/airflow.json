@@ -1,0 +1,17 @@
+{
+  "Name": "airflow",
+  "Resources": [
+    {
+      "Name": "environment",
+      "ARNFormats": [
+        "arn:${Partition}:airflow:${Region}:${Account}:environment/${EnvironmentName}"
+      ]
+    },
+    {
+      "Name": "rbac-role",
+      "ARNFormats": [
+        "arn:${Partition}:airflow:${Region}:${Account}:role/${EnvironmentName}/${RoleName}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "Name": "ecr",
+  "Resources": [
+    {
+      "Name": "repository",
+      "ARNFormats": [
+        "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}"
+      ]
+    }
+  ]
+}

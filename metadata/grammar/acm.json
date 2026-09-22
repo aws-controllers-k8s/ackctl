@@ -1,0 +1,29 @@
+{
+  "Name": "acm",
+  "Resources": [
+    {
+      "Name": "acme-domain-validation",
+      "ARNFormats": [
+        "arn:${Partition}:acm:${Region}:${Account}:acme-endpoint/${AcmeEndpointId}/acme-domain-validation/${AcmeDomainValidationId}"
+      ]
+    },
+    {
+      "Name": "acme-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:acm:${Region}:${Account}:acme-endpoint/${AcmeEndpointId}"
+      ]
+    },
+    {
+      "Name": "acme-external-account-binding",
+      "ARNFormats": [
+        "arn:${Partition}:acm:${Region}:${Account}:acme-endpoint/${AcmeEndpointId}/acme-external-account-binding/${ExternalAccountBindingId}"
+      ]
+    },
+    {
+      "Name": "certificate",
+      "ARNFormats": [
+        "arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}"
+      ]
+    }
+  ]
+}

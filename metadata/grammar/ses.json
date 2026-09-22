@@ -1,0 +1,125 @@
+{
+  "Name": "ses",
+  "Resources": [
+    {
+      "Name": "addon-instance",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:addon-instance/${AddonInstanceId}"
+      ]
+    },
+    {
+      "Name": "addon-subscription",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:addon-subscription/${AddonSubscriptionId}"
+      ]
+    },
+    {
+      "Name": "configuration-set",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}"
+      ]
+    },
+    {
+      "Name": "contact-list",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:contact-list/${ContactListName}"
+      ]
+    },
+    {
+      "Name": "custom-verification-email-template",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${TemplateName}"
+      ]
+    },
+    {
+      "Name": "dedicated-ip-pool",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${DedicatedIPPool}"
+      ]
+    },
+    {
+      "Name": "deliverability-test-report",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${ReportId}"
+      ]
+    },
+    {
+      "Name": "export-job",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:export-job/${ExportJobId}"
+      ]
+    },
+    {
+      "Name": "identity",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}"
+      ]
+    },
+    {
+      "Name": "import-job",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:import-job/${ImportJobId}"
+      ]
+    },
+    {
+      "Name": "mailmanager-address-list",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:mailmanager-address-list/${AddressListId}"
+      ]
+    },
+    {
+      "Name": "mailmanager-archive",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:mailmanager-archive/${ArchiveId}"
+      ]
+    },
+    {
+      "Name": "mailmanager-ingress-point",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:mailmanager-ingress-point/${IngressPointId}"
+      ]
+    },
+    {
+      "Name": "mailmanager-rule-set",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:mailmanager-rule-set/${RuleSetId}"
+      ]
+    },
+    {
+      "Name": "mailmanager-smtp-relay",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:mailmanager-smtp-relay/${RelayId}"
+      ]
+    },
+    {
+      "Name": "mailmanager-traffic-policy",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:mailmanager-traffic-policy/${TrafficPolicyId}"
+      ]
+    },
+    {
+      "Name": "multi-region-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:multi-region-endpoint/${EndpointName}"
+      ]
+    },
+    {
+      "Name": "reputation-policy",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:aws:reputation-policy/${ReputationPolicyName}"
+      ]
+    },
+    {
+      "Name": "template",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:template/${TemplateName}"
+      ]
+    },
+    {
+      "Name": "tenant",
+      "ARNFormats": [
+        "arn:${Partition}:ses:${Region}:${Account}:tenant/${TenantName}/${TenantId}"
+      ]
+    }
+  ]
+}

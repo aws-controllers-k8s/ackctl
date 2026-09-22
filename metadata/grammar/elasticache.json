@@ -1,0 +1,77 @@
+{
+  "Name": "elasticache",
+  "Resources": [
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:cluster:${CacheClusterId}"
+      ]
+    },
+    {
+      "Name": "globalreplicationgroup",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache::${Account}:globalreplicationgroup:${GlobalReplicationGroupId}"
+      ]
+    },
+    {
+      "Name": "parametergroup",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:parametergroup:${CacheParameterGroupName}"
+      ]
+    },
+    {
+      "Name": "replicationgroup",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:replicationgroup:${ReplicationGroupId}"
+      ]
+    },
+    {
+      "Name": "reserved-instance",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:reserved-instance:${ReservedCacheNodeId}"
+      ]
+    },
+    {
+      "Name": "securitygroup",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:securitygroup:${CacheSecurityGroupName}"
+      ]
+    },
+    {
+      "Name": "serverlesscache",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscache:${ServerlessCacheName}"
+      ]
+    },
+    {
+      "Name": "serverlesscachesnapshot",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscachesnapshot:${ServerlessCacheSnapshotName}"
+      ]
+    },
+    {
+      "Name": "snapshot",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:snapshot:${SnapshotName}"
+      ]
+    },
+    {
+      "Name": "subnetgroup",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:subnetgroup:${CacheSubnetGroupName}"
+      ]
+    },
+    {
+      "Name": "user",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}"
+      ]
+    },
+    {
+      "Name": "usergroup",
+      "ARNFormats": [
+        "arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}"
+      ]
+    }
+  ]
+}

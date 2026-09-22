@@ -58,20 +58,23 @@ func TestCatalogRoundTrips(t *testing.T) {
 			require.NotEmpty(t, r.ResourceTypeFilter,
 				"supported resource has no Tagging API type filter")
 			assertTypeFilterWellFormed(t, r.ResourceTypeFilter)
-			require.NotEmpty(t, r.Bindings, "supported resource has no bindings")
+			require.NotEmpty(t, r.Templates, "supported resource has no templates")
 
 			if r.ARNPrimary {
 				assertARNPrimaryRoundTrips(t, res, r)
 				return
 			}
 
-			arnStr, want := synthesize(t, r)
-			got, rerr := res.ResolveARNForResource(arnStr, r)
-			require.NoError(t, rerr, "synthetic ARN built from this resource's own template must resolve\n  arn: %s", arnStr)
+			for _, tmpl := range r.Templates {
+				require.NotEmpty(t, tmpl.Bindings, "template %q has no bindings", tmpl.ARNTemplate)
+				arnStr, want := synthesize(t, tmpl)
+				got, rerr := res.ResolveARNForResource(arnStr, r)
+				require.NoError(t, rerr, "synthetic ARN built from this resource's own template must resolve\n  arn: %s", arnStr)
 
-			assert.Equal(t, want, got.Fields,
-				"each binding must recover its own placeholder\n  template: %s\n  arn:      %s",
-				r.ARNTemplate, arnStr)
+				assert.Equal(t, want, got.Fields,
+					"each binding must recover its own placeholder\n  template: %s\n  arn:      %s",
+					tmpl.ARNTemplate, arnStr)
+			}
 		})
 	}
 }
@@ -91,9 +94,11 @@ func assertTypeFilterWellFormed(t *testing.T, tf string) {
 
 func assertARNPrimaryRoundTrips(t *testing.T, res *Resolver, r metadata.Resource) {
 	t.Helper()
-	require.Len(t, r.Bindings, 1, "an ARN-primary resource binds exactly one key")
-	assert.Equal(t, "arn", r.Bindings[0].Key)
-	assert.Equal(t, "${ARN}", r.Bindings[0].From)
+	require.Len(t, r.Templates, 1, "an ARN-primary resource has exactly the sentinel template")
+	bindings := r.Templates[0].Bindings
+	require.Len(t, bindings, 1, "an ARN-primary resource binds exactly one key")
+	assert.Equal(t, "arn", bindings[0].Key)
+	assert.Equal(t, "${ARN}", bindings[0].From)
 
 	arnStr := fmt.Sprintf("arn:%s:%s:%s:%s:%s/sentinel-name",
 		testPartition, strings.SplitN(r.ResourceTypeFilter, ":", 2)[0],
@@ -105,7 +110,7 @@ func assertARNPrimaryRoundTrips(t *testing.T, res *Resolver, r metadata.Resource
 
 // synthesize substitutes a unique sentinel for every placeholder and returns the
 // adoption-fields map a correct resolver must produce.
-func synthesize(t *testing.T, r metadata.Resource) (string, map[string]string) {
+func synthesize(t *testing.T, tmpl metadata.Template) (string, map[string]string) {
 	t.Helper()
 
 	subst := func(s string) string {
@@ -124,12 +129,12 @@ func synthesize(t *testing.T, r metadata.Resource) (string, map[string]string) {
 		})
 	}
 
-	arnStr := subst(r.ARNTemplate)
+	arnStr := subst(tmpl.ARNTemplate)
 	require.NotContains(t, arnStr, "${",
-		"unsubstituted placeholder left in synthetic ARN for %s/%s", r.Service, r.Kind)
+		"unsubstituted placeholder left in synthetic ARN for template %s", tmpl.ARNTemplate)
 
-	want := make(map[string]string, len(r.Bindings))
-	for _, b := range r.Bindings {
+	want := make(map[string]string, len(tmpl.Bindings))
+	for _, b := range tmpl.Bindings {
 		from := b.From
 		// ${ARN} means the whole matched ARN, which is only knowable after the
 		// rest of the template is rendered.

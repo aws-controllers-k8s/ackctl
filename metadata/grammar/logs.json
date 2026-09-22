@@ -1,0 +1,59 @@
+{
+  "Name": "logs",
+  "Resources": [
+    {
+      "Name": "anomaly-detector",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:anomaly-detector:${DetectorId}"
+      ]
+    },
+    {
+      "Name": "delivery",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:delivery:${DeliveryName}"
+      ]
+    },
+    {
+      "Name": "delivery-destination",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:delivery-destination:${DeliveryDestinationName}"
+      ]
+    },
+    {
+      "Name": "delivery-source",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:delivery-source:${DeliverySourceName}"
+      ]
+    },
+    {
+      "Name": "destination",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:destination:${DestinationName}"
+      ]
+    },
+    {
+      "Name": "log-group",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}"
+      ]
+    },
+    {
+      "Name": "log-stream",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}"
+      ]
+    },
+    {
+      "Name": "lookup-table",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:lookup-table:${LookupTableName}"
+      ]
+    },
+    {
+      "Name": "scheduled-query",
+      "ARNFormats": [
+        "arn:${Partition}:logs:${Region}:${Account}:scheduled-query:${ScheduledQueryId}"
+      ]
+    }
+  ]
+}

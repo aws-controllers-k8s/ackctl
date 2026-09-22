@@ -1,0 +1,149 @@
+{
+  "Name": "glue",
+  "Resources": [
+    {
+      "Name": "blueprint",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:blueprint/${BlueprintName}"
+      ]
+    },
+    {
+      "Name": "catalog",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:catalog/${CatalogName}"
+      ]
+    },
+    {
+      "Name": "completion",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:completion/${CompletionId}"
+      ]
+    },
+    {
+      "Name": "connection",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:connection/${ConnectionName}"
+      ]
+    },
+    {
+      "Name": "connectionType",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:connectionType:${ConnectionTypeName}"
+      ]
+    },
+    {
+      "Name": "crawler",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:crawler/${CrawlerName}"
+      ]
+    },
+    {
+      "Name": "customEntityType",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:customEntityType/${CustomEntityTypeId}"
+      ]
+    },
+    {
+      "Name": "dataQualityRuleset",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:dataQualityRuleset/${RulesetName}"
+      ]
+    },
+    {
+      "Name": "database",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:database/${DatabaseName}"
+      ]
+    },
+    {
+      "Name": "devendpoint",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:devEndpoint/${DevEndpointName}"
+      ]
+    },
+    {
+      "Name": "integration",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:integration:${IntegrationId}"
+      ]
+    },
+    {
+      "Name": "integrationResourceProperty",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:integrationresourceproperty/${ResourceType}/${ResourceName}"
+      ]
+    },
+    {
+      "Name": "job",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:job/${JobName}"
+      ]
+    },
+    {
+      "Name": "mlTransform",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:mlTransform/${TransformId}"
+      ]
+    },
+    {
+      "Name": "registry",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:registry/${RegistryName}"
+      ]
+    },
+    {
+      "Name": "rootcatalog",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:catalog"
+      ]
+    },
+    {
+      "Name": "schema",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:schema/${SchemaName}"
+      ]
+    },
+    {
+      "Name": "session",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:session/${SessionId}"
+      ]
+    },
+    {
+      "Name": "table",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:table/${DatabaseName}/${TableName}"
+      ]
+    },
+    {
+      "Name": "tableversion",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:tableVersion/${DatabaseName}/${TableName}/${TableVersionName}"
+      ]
+    },
+    {
+      "Name": "trigger",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:trigger/${TriggerName}"
+      ]
+    },
+    {
+      "Name": "usageProfile",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:usageProfile/${UsageProfileId}"
+      ]
+    },
+    {
+      "Name": "userdefinedfunction",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${DatabaseName}/${UserDefinedFunctionName}"
+      ]
+    },
+    {
+      "Name": "workflow",
+      "ARNFormats": [
+        "arn:${Partition}:glue:${Region}:${Account}:workflow/${WorkflowName}"
+      ]
+    }
+  ]
+}

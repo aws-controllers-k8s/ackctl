@@ -1,0 +1,17 @@
+{
+  "Name": "mq",
+  "Resources": [
+    {
+      "Name": "brokers",
+      "ARNFormats": [
+        "arn:${Partition}:mq:${Region}:${Account}:broker:${BrokerName}:${BrokerId}"
+      ]
+    },
+    {
+      "Name": "configurations",
+      "ARNFormats": [
+        "arn:${Partition}:mq:${Region}:${Account}:configuration:${ConfigurationId}"
+      ]
+    }
+  ]
+}

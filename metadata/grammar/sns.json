@@ -1,0 +1,11 @@
+{
+  "Name": "sns",
+  "Resources": [
+    {
+      "Name": "topic",
+      "ARNFormats": [
+        "arn:${Partition}:sns:${Region}:${Account}:${TopicName}"
+      ]
+    }
+  ]
+}

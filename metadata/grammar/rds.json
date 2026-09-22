@@ -1,0 +1,149 @@
+{
+  "Name": "rds",
+  "Resources": [
+    {
+      "Name": "auto-backup",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:auto-backup:${DbInstanceAutomatedBackupId}"
+      ]
+    },
+    {
+      "Name": "cev",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:cev:${Engine}/${EngineVersion}/${CustomDbEngineVersionId}"
+      ]
+    },
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}"
+      ]
+    },
+    {
+      "Name": "cluster-auto-backup",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster-auto-backup:${DbClusterAutomatedBackupId}"
+      ]
+    },
+    {
+      "Name": "cluster-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}"
+      ]
+    },
+    {
+      "Name": "cluster-pg",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}"
+      ]
+    },
+    {
+      "Name": "cluster-snapshot",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}"
+      ]
+    },
+    {
+      "Name": "db",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}"
+      ]
+    },
+    {
+      "Name": "deployment",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:deployment:${BlueGreenDeploymentIdentifier}"
+      ]
+    },
+    {
+      "Name": "es",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}"
+      ]
+    },
+    {
+      "Name": "global-cluster",
+      "ARNFormats": [
+        "arn:${Partition}:rds::${Account}:global-cluster:${GlobalCluster}"
+      ]
+    },
+    {
+      "Name": "integration",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:integration:${IntegrationIdentifier}"
+      ]
+    },
+    {
+      "Name": "og",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}"
+      ]
+    },
+    {
+      "Name": "pg",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}"
+      ]
+    },
+    {
+      "Name": "proxy",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}"
+      ]
+    },
+    {
+      "Name": "proxy-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:db-proxy-endpoint:${DbProxyEndpointId}"
+      ]
+    },
+    {
+      "Name": "ri",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}"
+      ]
+    },
+    {
+      "Name": "secgrp",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}"
+      ]
+    },
+    {
+      "Name": "shardgrp",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:shard-group:${DbShardGroupResourceId}"
+      ]
+    },
+    {
+      "Name": "snapshot",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}"
+      ]
+    },
+    {
+      "Name": "snapshot-tenant-database",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:snapshot-tenant-database:${SnapshotName}:${TenantResourceId}"
+      ]
+    },
+    {
+      "Name": "subgrp",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}"
+      ]
+    },
+    {
+      "Name": "target-group",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}"
+      ]
+    },
+    {
+      "Name": "tenant-database",
+      "ARNFormats": [
+        "arn:${Partition}:rds:${Region}:${Account}:tenant-database:${TenantResourceId}"
+      ]
+    }
+  ]
+}

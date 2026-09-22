@@ -1,0 +1,35 @@
+{
+  "Name": "es",
+  "Resources": [
+    {
+      "Name": "application",
+      "ARNFormats": [
+        "arn:${Partition}:opensearch:${Region}:${Account}:application/${AppId}"
+      ]
+    },
+    {
+      "Name": "datasource",
+      "ARNFormats": [
+        "arn:${Partition}:opensearch:${Region}:${Account}:datasource/${DataSourceName}"
+      ]
+    },
+    {
+      "Name": "domain",
+      "ARNFormats": [
+        "arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}"
+      ]
+    },
+    {
+      "Name": "es_role",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService"
+      ]
+    },
+    {
+      "Name": "opensearchservice_role",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService"
+      ]
+    }
+  ]
+}

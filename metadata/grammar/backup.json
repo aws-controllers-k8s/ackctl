@@ -1,0 +1,59 @@
+{
+  "Name": "backup",
+  "Resources": [
+    {
+      "Name": "backupAccessPoint",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:accesspoint/${AccessPointName}"
+      ]
+    },
+    {
+      "Name": "backupPlan",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}"
+      ]
+    },
+    {
+      "Name": "backupVault",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}"
+      ]
+    },
+    {
+      "Name": "framework",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:framework:${FrameworkName}-${FrameworkId}"
+      ]
+    },
+    {
+      "Name": "legalHold",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:legal-hold:${LegalHoldId}"
+      ]
+    },
+    {
+      "Name": "recoveryPoint",
+      "ARNFormats": [
+        "arn:${Partition}:${Vendor}:${Region}:*:${ResourceType}:${RecoveryPointId}"
+      ]
+    },
+    {
+      "Name": "reportPlan",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:report-plan:${ReportPlanName}-${ReportPlanId}"
+      ]
+    },
+    {
+      "Name": "restoreTestingPlan",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:restore-testing-plan:${RestoreTestingPlanName}-${RestoreTestingPlanId}"
+      ]
+    },
+    {
+      "Name": "tieringConfiguration",
+      "ARNFormats": [
+        "arn:${Partition}:backup:${Region}:${Account}:tiering-configuration:${TieringConfigurationName}-${TieringConfigurationId}"
+      ]
+    }
+  ]
+}

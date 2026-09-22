@@ -1,0 +1,443 @@
+{
+  "Name": "sagemaker",
+  "Resources": [
+    {
+      "Name": "action",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:action/${ActionName}"
+      ]
+    },
+    {
+      "Name": "ai-benchmark-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:ai-benchmark-job/${AIBenchmarkJobName}"
+      ]
+    },
+    {
+      "Name": "ai-recommendation-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:ai-recommendation-job/${AIRecommendationJobName}"
+      ]
+    },
+    {
+      "Name": "ai-workload-config",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:ai-workload-config/${AIWorkloadConfigName}"
+      ]
+    },
+    {
+      "Name": "algorithm",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:algorithm/${AlgorithmName}"
+      ]
+    },
+    {
+      "Name": "app",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:app/${DomainId}/${UserProfileName}/${AppType}/${AppName}"
+      ]
+    },
+    {
+      "Name": "app-image-config",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:app-image-config/${AppImageConfigName}"
+      ]
+    },
+    {
+      "Name": "artifact",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:artifact/${HashOfArtifactSource}"
+      ]
+    },
+    {
+      "Name": "automl-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:automl-job/${AutoMLJobJobName}"
+      ]
+    },
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:cluster/${ClusterId}"
+      ]
+    },
+    {
+      "Name": "cluster-scheduler-config",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:cluster-scheduler-config/${ClusterSchedulerConfigId}"
+      ]
+    },
+    {
+      "Name": "code-repository",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:code-repository/${CodeRepositoryName}"
+      ]
+    },
+    {
+      "Name": "compilation-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:compilation-job/${CompilationJobName}"
+      ]
+    },
+    {
+      "Name": "compute-quota",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:compute-quota/${ComputeQuotaId}"
+      ]
+    },
+    {
+      "Name": "context",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:context/${ContextName}"
+      ]
+    },
+    {
+      "Name": "data-quality-job-definition",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:data-quality-job-definition/${DataQualityJobDefinitionName}"
+      ]
+    },
+    {
+      "Name": "device",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}/device/${DeviceName}"
+      ]
+    },
+    {
+      "Name": "device-fleet",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}"
+      ]
+    },
+    {
+      "Name": "domain",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}"
+      ]
+    },
+    {
+      "Name": "edge-deployment-plan",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:edge-deployment/${EdgeDeploymentPlanName}"
+      ]
+    },
+    {
+      "Name": "edge-packaging-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:edge-packaging-job/${EdgePackagingJobName}"
+      ]
+    },
+    {
+      "Name": "endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}"
+      ]
+    },
+    {
+      "Name": "endpoint-config",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}"
+      ]
+    },
+    {
+      "Name": "experiment",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:experiment/${ExperimentName}"
+      ]
+    },
+    {
+      "Name": "experiment-trial",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial/${TrialName}"
+      ]
+    },
+    {
+      "Name": "experiment-trial-component",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial-component/${TrialComponentName}"
+      ]
+    },
+    {
+      "Name": "feature-group",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:feature-group/${FeatureGroupName}"
+      ]
+    },
+    {
+      "Name": "flow-definition",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:flow-definition/${FlowDefinitionName}"
+      ]
+    },
+    {
+      "Name": "hub",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:hub/${HubName}"
+      ]
+    },
+    {
+      "Name": "hub-content",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:hub-content/${HubName}/${HubContentType}/${HubContentName}"
+      ]
+    },
+    {
+      "Name": "human-loop",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:human-loop/${HumanLoopName}"
+      ]
+    },
+    {
+      "Name": "human-task-ui",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:human-task-ui/${HumanTaskUiName}"
+      ]
+    },
+    {
+      "Name": "hyper-parameter-tuning-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}"
+      ]
+    },
+    {
+      "Name": "image",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:image/${ImageName}"
+      ]
+    },
+    {
+      "Name": "image-version",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:image-version/${ImageName}/${Version}"
+      ]
+    },
+    {
+      "Name": "inference-component",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:inference-component/${InferenceComponentName}"
+      ]
+    },
+    {
+      "Name": "inference-experiment",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:inference-experiment/${InferenceExperimentName}"
+      ]
+    },
+    {
+      "Name": "inference-recommendations-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:inference-recommendations-job/${InferenceRecommendationsJobName}"
+      ]
+    },
+    {
+      "Name": "job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:job/${JobCategory}/${JobName}"
+      ]
+    },
+    {
+      "Name": "labeling-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}"
+      ]
+    },
+    {
+      "Name": "lineage-group",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:lineage-group/${LineageGroupName}"
+      ]
+    },
+    {
+      "Name": "mlflow-app",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:mlflow-app/${MLflowAppId}"
+      ]
+    },
+    {
+      "Name": "mlflow-tracking-server",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:mlflow-tracking-server/${MlflowTrackingServerName}"
+      ]
+    },
+    {
+      "Name": "model",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}"
+      ]
+    },
+    {
+      "Name": "model-bias-job-definition",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model-bias-job-definition/${ModelBiasJobDefinitionName}"
+      ]
+    },
+    {
+      "Name": "model-card",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model-card/${ModelCardName}"
+      ]
+    },
+    {
+      "Name": "model-card-export-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model-card/${ModelCardName}/export-job/${ExportJobName}"
+      ]
+    },
+    {
+      "Name": "model-explainability-job-definition",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model-explainability-job-definition/${ModelExplainabilityJobDefinitionName}"
+      ]
+    },
+    {
+      "Name": "model-package",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model-package/${ModelPackageName}"
+      ]
+    },
+    {
+      "Name": "model-package-group",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model-package-group/${ModelPackageGroupName}"
+      ]
+    },
+    {
+      "Name": "model-quality-job-definition",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:model-quality-job-definition/${ModelQualityJobDefinitionName}"
+      ]
+    },
+    {
+      "Name": "monitoring-schedule",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}"
+      ]
+    },
+    {
+      "Name": "monitoring-schedule-alert",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}/alert/${MonitoringScheduleAlertName}"
+      ]
+    },
+    {
+      "Name": "notebook-instance",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}"
+      ]
+    },
+    {
+      "Name": "notebook-instance-lifecycle-config",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance-lifecycle-config/${NotebookInstanceLifecycleConfigName}"
+      ]
+    },
+    {
+      "Name": "optimization-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:optimization-job/${OptimizationJobName}"
+      ]
+    },
+    {
+      "Name": "partner-app",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:partner-app/${AppId}"
+      ]
+    },
+    {
+      "Name": "pipeline",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}"
+      ]
+    },
+    {
+      "Name": "pipeline-execution",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}/execution/${RandomString}"
+      ]
+    },
+    {
+      "Name": "processing-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}"
+      ]
+    },
+    {
+      "Name": "project",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:project/${ProjectName}"
+      ]
+    },
+    {
+      "Name": "reserved-capacity",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:reserved-capacity/${RandomString}"
+      ]
+    },
+    {
+      "Name": "sagemaker-catalog",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:sagemaker-catalog/${ResourceCatalogName}"
+      ]
+    },
+    {
+      "Name": "shared-model",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:shared-model/${SharedModelId}"
+      ]
+    },
+    {
+      "Name": "shared-model-event",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:shared-model-event/${EventId}"
+      ]
+    },
+    {
+      "Name": "space",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:space/${DomainId}/${SpaceName}"
+      ]
+    },
+    {
+      "Name": "studio-lifecycle-config",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:studio-lifecycle-config/${StudioLifecycleConfigName}"
+      ]
+    },
+    {
+      "Name": "training-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}"
+      ]
+    },
+    {
+      "Name": "training-plan",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:training-plan/${TrainingPlanName}"
+      ]
+    },
+    {
+      "Name": "transform-job",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}"
+      ]
+    },
+    {
+      "Name": "user-profile",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}"
+      ]
+    },
+    {
+      "Name": "workforce",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:workforce/${WorkforceName}"
+      ]
+    },
+    {
+      "Name": "workteam",
+      "ARNFormats": [
+        "arn:${Partition}:sagemaker:${Region}:${Account}:workteam/${WorkteamName}"
+      ]
+    }
+  ]
+}

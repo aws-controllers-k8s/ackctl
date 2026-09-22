@@ -1,0 +1,29 @@
+{
+  "Name": "ram",
+  "Resources": [
+    {
+      "Name": "customer-managed-permission",
+      "ARNFormats": [
+        "arn:${Partition}:ram:${Region}:${Account}:permission/${ResourcePath}"
+      ]
+    },
+    {
+      "Name": "permission",
+      "ARNFormats": [
+        "arn:${Partition}:ram::${Account}:permission/${ResourcePath}"
+      ]
+    },
+    {
+      "Name": "resource-share",
+      "ARNFormats": [
+        "arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}"
+      ]
+    },
+    {
+      "Name": "resource-share-invitation",
+      "ARNFormats": [
+        "arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}"
+      ]
+    }
+  ]
+}

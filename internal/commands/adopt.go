@@ -155,8 +155,10 @@ func runAdopt(cmd *cobra.Command, _ []string) error {
 	debuglog.Logf("service/kind:        %s/%s", adoptService, adoptKind)
 	debuglog.Logf("resource type filter: %s", target.ResourceTypeFilter)
 	debuglog.Logf("GVK:                 %s/%s %s", target.Group, target.Version, target.Kind)
-	debuglog.Logf("ARN template:        %s", target.ARNTemplate)
-	debuglog.Logf("identifier keys:     %s", strings.Join(bindingKeys(target), ", "))
+	for _, tmpl := range target.Templates {
+		debuglog.Logf("ARN template:        %s", tmpl.ARNTemplate)
+	}
+	debuglog.Logf("identifier keys:     %s", strings.Join(target.IdentifierKeys(), ", "))
 
 	awsCfg, err := loadAWSConfig(ctx, adoptRegion)
 	if err != nil {
@@ -272,14 +274,6 @@ func adoptOutcome(resolved, skipped, matched int) error {
 	}
 	return fmt.Errorf("skipped %d of %d matched resource(s), so the manifests above are "+
 		"incomplete; see the skip reasons above", skipped, matched)
-}
-
-func bindingKeys(r metadata.Resource) []string {
-	keys := make([]string, 0, len(r.Bindings))
-	for _, b := range r.Bindings {
-		keys = append(keys, b.Key)
-	}
-	return keys
 }
 
 // logCallerIdentity reports which account and identity the query runs as.

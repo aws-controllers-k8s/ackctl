@@ -36,6 +36,14 @@ type Binding struct {
 	From string `json:"from"`
 }
 
+// Template is one ARN shape a resource can take, with the bindings renderable from it.
+type Template struct {
+	// ARNTemplate is the AWS ARN grammar with ${Placeholder} slots, or the sentinel
+	// "<arn>" when the primary key is the ARN itself.
+	ARNTemplate string    `json:"arn_template"`
+	Bindings    []Binding `json:"bindings"`
+}
+
 type Resource struct {
 	Service     string `json:"service"`
 	ResourceDir string `json:"resource_dir"`
@@ -44,12 +52,25 @@ type Resource struct {
 	Version     string `json:"version"`
 	// ResourceTypeFilter is the Tagging API resource-type filter, scoped to the AWS
 	// service namespace rather than the ACK service name.
-	ResourceTypeFilter string `json:"resource_type_filter"`
-	// ARNTemplate is the AWS ARN grammar with ${Placeholder} slots, or the sentinel
-	// "<arn>" when the primary key is the ARN itself.
-	ARNTemplate string    `json:"arn_template"`
-	ARNPrimary  bool      `json:"arn_primary"`
-	Bindings    []Binding `json:"bindings"`
+	ResourceTypeFilter string     `json:"resource_type_filter"`
+	ARNPrimary         bool       `json:"arn_primary"`
+	Templates          []Template `json:"templates"`
+}
+
+// IdentifierKeys returns the union of binding keys across all templates, in
+// first-appearance order.
+func (r Resource) IdentifierKeys() []string {
+	var keys []string
+	seen := map[string]bool{}
+	for _, t := range r.Templates {
+		for _, b := range t.Bindings {
+			if !seen[b.Key] {
+				seen[b.Key] = true
+				keys = append(keys, b.Key)
+			}
+		}
+	}
+	return keys
 }
 
 // GroupVersion returns the CR apiVersion string (e.g. "eks.services.k8s.aws/v1alpha1").

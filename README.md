@@ -66,6 +66,8 @@ the reasoning behind it.
 ```bash
 make test               # lint, unit tests, race detector
 make test-integration   # talks to real AWS; needs credentials and AWS_REGION
+make catalog            # regenerate the embedded adoption catalog
+make verify-catalog     # fail if the committed catalog is stale
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).

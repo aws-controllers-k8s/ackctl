@@ -1,0 +1,689 @@
+{
+  "Name": "ec2",
+  "Resources": [
+    {
+      "Name": "application-status-check",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:application-status-check/${ApplicationStatusCheckId}"
+      ]
+    },
+    {
+      "Name": "capacity-block",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:capacity-block/${CapacityBlockId}"
+      ]
+    },
+    {
+      "Name": "capacity-manager-data-export",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:capacity-manager-data-export/${CapacityManagerDataExportId}"
+      ]
+    },
+    {
+      "Name": "capacity-reservation",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation/${CapacityReservationId}"
+      ]
+    },
+    {
+      "Name": "capacity-reservation-cancellation-quote",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation-cancellation-quote/${CapacityReservationCancellationQuoteId}"
+      ]
+    },
+    {
+      "Name": "capacity-reservation-fleet",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation-fleet/${CapacityReservationFleetId}"
+      ]
+    },
+    {
+      "Name": "carrier-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:carrier-gateway/${CarrierGatewayId}"
+      ]
+    },
+    {
+      "Name": "certificate",
+      "ARNFormats": [
+        "arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}"
+      ]
+    },
+    {
+      "Name": "client-vpn-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:client-vpn-endpoint/${ClientVpnEndpointId}"
+      ]
+    },
+    {
+      "Name": "coip-pool",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:coip-pool/${Ipv4PoolCoipId}"
+      ]
+    },
+    {
+      "Name": "customer-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:customer-gateway/${CustomerGatewayId}"
+      ]
+    },
+    {
+      "Name": "declarative-policies-report",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:declarative-policies-report/${DeclarativePoliciesReportId}"
+      ]
+    },
+    {
+      "Name": "dedicated-host",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:dedicated-host/${DedicatedHostId}"
+      ]
+    },
+    {
+      "Name": "dhcp-options",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:dhcp-options/${DhcpOptionsId}"
+      ]
+    },
+    {
+      "Name": "egress-only-internet-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:egress-only-internet-gateway/${EgressOnlyInternetGatewayId}"
+      ]
+    },
+    {
+      "Name": "elastic-gpu",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:elastic-gpu/${ElasticGpuId}"
+      ]
+    },
+    {
+      "Name": "elastic-inference",
+      "ARNFormats": [
+        "arn:${Partition}:elastic-inference:${Region}:${Account}:elastic-inference-accelerator/${AcceleratorId}"
+      ]
+    },
+    {
+      "Name": "elastic-ip",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:elastic-ip/${AllocationId}"
+      ]
+    },
+    {
+      "Name": "export-image-task",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:export-image-task/${ExportImageTaskId}"
+      ]
+    },
+    {
+      "Name": "export-instance-task",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:export-instance-task/${ExportTaskId}"
+      ]
+    },
+    {
+      "Name": "fleet",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:fleet/${FleetId}"
+      ]
+    },
+    {
+      "Name": "fpga-image",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:fpga-image/${FpgaImageId}"
+      ]
+    },
+    {
+      "Name": "group",
+      "ARNFormats": [
+        "arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}"
+      ]
+    },
+    {
+      "Name": "host-reservation",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:host-reservation/${HostReservationId}"
+      ]
+    },
+    {
+      "Name": "image",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}::image/${ImageId}"
+      ]
+    },
+    {
+      "Name": "image-usage-report",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:image-usage-report/${ImageUsageReportId}"
+      ]
+    },
+    {
+      "Name": "import-image-task",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:import-image-task/${ImportImageTaskId}"
+      ]
+    },
+    {
+      "Name": "import-snapshot-task",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:import-snapshot-task/${ImportSnapshotTaskId}"
+      ]
+    },
+    {
+      "Name": "instance",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}"
+      ]
+    },
+    {
+      "Name": "instance-connect-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:instance-connect-endpoint/${InstanceConnectEndpointId}"
+      ]
+    },
+    {
+      "Name": "instance-event-window",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:instance-event-window/${InstanceEventWindowId}"
+      ]
+    },
+    {
+      "Name": "internet-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:internet-gateway/${InternetGatewayId}"
+      ]
+    },
+    {
+      "Name": "ipam",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam/${IpamId}"
+      ]
+    },
+    {
+      "Name": "ipam-external-resource-verification-token",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-external-resource-verification-token/${IpamExternalResourceVerificationTokenId}"
+      ]
+    },
+    {
+      "Name": "ipam-internet-registry-association",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-internet-registry-association/${IpamInternetRegistryAssociationId}"
+      ]
+    },
+    {
+      "Name": "ipam-policy",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-policy/${IpamPolicyId}"
+      ]
+    },
+    {
+      "Name": "ipam-pool",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-pool/${IpamPoolId}"
+      ]
+    },
+    {
+      "Name": "ipam-pool-allocation",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:ipam-pool-allocation/${IpamPoolAllocationId}"
+      ]
+    },
+    {
+      "Name": "ipam-prefix-list-resolver",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-prefix-list-resolver/${IpamPrefixListResolverId}"
+      ]
+    },
+    {
+      "Name": "ipam-prefix-list-resolver-target",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-prefix-list-resolver-target/${IpamPrefixListResolverTargetId}"
+      ]
+    },
+    {
+      "Name": "ipam-resource-discovery",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-resource-discovery/${IpamResourceDiscoveryId}"
+      ]
+    },
+    {
+      "Name": "ipam-resource-discovery-association",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-resource-discovery-association/${IpamResourceDiscoveryAssociationId}"
+      ]
+    },
+    {
+      "Name": "ipam-scope",
+      "ARNFormats": [
+        "arn:${Partition}:ec2::${Account}:ipam-scope/${IpamScopeId}"
+      ]
+    },
+    {
+      "Name": "ipv4pool-ec2",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:ipv4pool-ec2/${Ipv4PoolEc2Id}"
+      ]
+    },
+    {
+      "Name": "ipv6pool-ec2",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:ipv6pool-ec2/${Ipv6PoolEc2Id}"
+      ]
+    },
+    {
+      "Name": "key-pair",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:key-pair/${KeyPairName}"
+      ]
+    },
+    {
+      "Name": "launch-template",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:launch-template/${LaunchTemplateId}"
+      ]
+    },
+    {
+      "Name": "license-configuration",
+      "ARNFormats": [
+        "arn:${Partition}:license-manager:${Region}:${Account}:license-configuration:${LicenseConfigurationId}"
+      ]
+    },
+    {
+      "Name": "local-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:local-gateway/${LocalGatewayId}"
+      ]
+    },
+    {
+      "Name": "local-gateway-route-table",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table/${LocalGatewayRoutetableId}"
+      ]
+    },
+    {
+      "Name": "local-gateway-route-table-virtual-interface-group-association",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-virtual-interface-group-association/${LocalGatewayRouteTableVirtualInterfaceGroupAssociationId}"
+      ]
+    },
+    {
+      "Name": "local-gateway-route-table-vpc-association",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-vpc-association/${LocalGatewayRouteTableVpcAssociationId}"
+      ]
+    },
+    {
+      "Name": "local-gateway-virtual-interface",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface/${LocalGatewayVirtualInterfaceId}"
+      ]
+    },
+    {
+      "Name": "local-gateway-virtual-interface-group",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface-group/${LocalGatewayVirtualInterfaceGroupId}"
+      ]
+    },
+    {
+      "Name": "mac-modification-task",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:mac-modification-task/${MacModificationTaskId}"
+      ]
+    },
+    {
+      "Name": "natgateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:natgateway/${NatGatewayId}"
+      ]
+    },
+    {
+      "Name": "network-acl",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:network-acl/${NaclId}"
+      ]
+    },
+    {
+      "Name": "network-insights-access-scope",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:network-insights-access-scope/${NetworkInsightsAccessScopeId}"
+      ]
+    },
+    {
+      "Name": "network-insights-access-scope-analysis",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:network-insights-access-scope-analysis/${NetworkInsightsAccessScopeAnalysisId}"
+      ]
+    },
+    {
+      "Name": "network-insights-analysis",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:network-insights-analysis/${NetworkInsightsAnalysisId}"
+      ]
+    },
+    {
+      "Name": "network-insights-path",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:network-insights-path/${NetworkInsightsPathId}"
+      ]
+    },
+    {
+      "Name": "network-interface",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:network-interface/${NetworkInterfaceId}"
+      ]
+    },
+    {
+      "Name": "outpost-lag",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:outpost-lag/${OutpostLagId}"
+      ]
+    },
+    {
+      "Name": "placement-group",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:placement-group/${PlacementGroupName}"
+      ]
+    },
+    {
+      "Name": "prefix-list",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:prefix-list/${PrefixListId}"
+      ]
+    },
+    {
+      "Name": "replace-root-volume-task",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:replace-root-volume-task/${ReplaceRootVolumeTaskId}"
+      ]
+    },
+    {
+      "Name": "reserved-instances",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:reserved-instances/${ReservationId}"
+      ]
+    },
+    {
+      "Name": "role",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}"
+      ]
+    },
+    {
+      "Name": "route-server",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:route-server/${RouteServerId}"
+      ]
+    },
+    {
+      "Name": "route-server-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:route-server-endpoint/${RouteServerEndpointId}"
+      ]
+    },
+    {
+      "Name": "route-server-peer",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:route-server-peer/${RouteServerPeerId}"
+      ]
+    },
+    {
+      "Name": "route-table",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:route-table/${RouteTableId}"
+      ]
+    },
+    {
+      "Name": "secondary-interface",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:secondary-interface/${SecondaryInterfaceId}"
+      ]
+    },
+    {
+      "Name": "secondary-network",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:secondary-network/${SecondaryNetworkId}"
+      ]
+    },
+    {
+      "Name": "secondary-subnet",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:secondary-subnet/${SecondarySubnetId}"
+      ]
+    },
+    {
+      "Name": "security-group",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:security-group/${SecurityGroupId}"
+      ]
+    },
+    {
+      "Name": "security-group-rule",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:security-group-rule/${SecurityGroupRuleId}"
+      ]
+    },
+    {
+      "Name": "snapshot",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}"
+      ]
+    },
+    {
+      "Name": "spot-fleet-request",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:spot-fleet-request/${SpotFleetRequestId}"
+      ]
+    },
+    {
+      "Name": "spot-instances-request",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:spot-instances-request/${SpotInstanceRequestId}"
+      ]
+    },
+    {
+      "Name": "subnet",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:subnet/${SubnetId}"
+      ]
+    },
+    {
+      "Name": "subnet-cidr-reservation",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:subnet-cidr-reservation/${SubnetCidrReservationId}"
+      ]
+    },
+    {
+      "Name": "traffic-mirror-filter",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-filter/${TrafficMirrorFilterId}"
+      ]
+    },
+    {
+      "Name": "traffic-mirror-filter-rule",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-filter-rule/${TrafficMirrorFilterRuleId}"
+      ]
+    },
+    {
+      "Name": "traffic-mirror-session",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-session/${TrafficMirrorSessionId}"
+      ]
+    },
+    {
+      "Name": "traffic-mirror-target",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-target/${TrafficMirrorTargetId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway/${TransitGatewayId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway-attachment",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-attachment/${TransitGatewayAttachmentId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway-connect-peer",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-connect-peer/${TransitGatewayConnectPeerId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway-metering-policy",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-metering-policy/${TransitGatewayMeteringPolicyId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway-multicast-domain",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-multicast-domain/${TransitGatewayMulticastDomainId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway-policy-table",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-policy-table/${TransitGatewayPolicyTableId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway-route-table",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-route-table/${TransitGatewayRouteTableId}"
+      ]
+    },
+    {
+      "Name": "transit-gateway-route-table-announcement",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-route-table-announcement/${TransitGatewayRouteTableAnnouncementId}"
+      ]
+    },
+    {
+      "Name": "verified-access-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:verified-access-endpoint/${VerifiedAccessEndpointId}"
+      ]
+    },
+    {
+      "Name": "verified-access-endpoint-target",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:verified-access-endpoint-target/${VerifiedAccessEndpointTargetId}"
+      ]
+    },
+    {
+      "Name": "verified-access-group",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:verified-access-group/${VerifiedAccessGroupId}"
+      ]
+    },
+    {
+      "Name": "verified-access-instance",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:verified-access-instance/${VerifiedAccessInstanceId}"
+      ]
+    },
+    {
+      "Name": "verified-access-policy",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:verified-access-policy/${VerifiedAccessPolicyId}"
+      ]
+    },
+    {
+      "Name": "verified-access-trust-provider",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:verified-access-trust-provider/${VerifiedAccessTrustProviderId}"
+      ]
+    },
+    {
+      "Name": "volume",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:volume/${VolumeId}"
+      ]
+    },
+    {
+      "Name": "vpc",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}"
+      ]
+    },
+    {
+      "Name": "vpc-block-public-access-exclusion",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-block-public-access-exclusion/${VpcBlockPublicAccessExclusionId}"
+      ]
+    },
+    {
+      "Name": "vpc-encryption-control",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-encryption-control/${VpcEncryptionControlId}"
+      ]
+    },
+    {
+      "Name": "vpc-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpcEndpointId}"
+      ]
+    },
+    {
+      "Name": "vpc-endpoint-connection",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-connection/${VpcEndpointConnectionId}"
+      ]
+    },
+    {
+      "Name": "vpc-endpoint-service",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${VpcEndpointServiceId}"
+      ]
+    },
+    {
+      "Name": "vpc-endpoint-service-permission",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service-permission/${VpcEndpointServicePermissionId}"
+      ]
+    },
+    {
+      "Name": "vpc-flow-log",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-flow-log/${VpcFlowLogId}"
+      ]
+    },
+    {
+      "Name": "vpc-peering-connection",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-peering-connection/${VpcPeeringConnectionId}"
+      ]
+    },
+    {
+      "Name": "vpn-concentrator",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpn-concentrator/${VpnConcentratorId}"
+      ]
+    },
+    {
+      "Name": "vpn-connection",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpn-connection/${VpnConnectionId}"
+      ]
+    },
+    {
+      "Name": "vpn-connection-device-type",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpn-connection-device-type/${VpnConnectionDeviceTypeId}"
+      ]
+    },
+    {
+      "Name": "vpn-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpn-gateway/${VpnGatewayId}"
+      ]
+    }
+  ]
+}

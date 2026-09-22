@@ -1,0 +1,17 @@
+{
+  "Name": "elasticfilesystem",
+  "Resources": [
+    {
+      "Name": "access-point",
+      "ARNFormats": [
+        "arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}"
+      ]
+    },
+    {
+      "Name": "file-system",
+      "ARNFormats": [
+        "arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}"
+      ]
+    }
+  ]
+}

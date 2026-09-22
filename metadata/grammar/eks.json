@@ -1,0 +1,71 @@
+{
+  "Name": "eks",
+  "Resources": [
+    {
+      "Name": "access-entry",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:access-entry/${ClusterName}/${IamIdentityType}/${IamIdentityAccountID}/${IamIdentityName}/${UUID}"
+      ]
+    },
+    {
+      "Name": "access-policy",
+      "ARNFormats": [
+        "arn:${Partition}:eks::aws:cluster-access-policy/${AccessPolicyName}"
+      ]
+    },
+    {
+      "Name": "addon",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:addon/${ClusterName}/${AddonName}/${UUID}"
+      ]
+    },
+    {
+      "Name": "capability",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:capability/${ClusterName}/${CapabilityType}/${CapabilityName}/${UUID}"
+      ]
+    },
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}"
+      ]
+    },
+    {
+      "Name": "dashboard",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:dashboard/${DashboardName}"
+      ]
+    },
+    {
+      "Name": "eks-anywhere-subscription",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:eks-anywhere-subscription/${UUID}"
+      ]
+    },
+    {
+      "Name": "fargateprofile",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}"
+      ]
+    },
+    {
+      "Name": "identityproviderconfig",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:identityproviderconfig/${ClusterName}/${IdentityProviderType}/${IdentityProviderConfigName}/${UUID}"
+      ]
+    },
+    {
+      "Name": "nodegroup",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}"
+      ]
+    },
+    {
+      "Name": "podidentityassociation",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:podidentityassociation/${ClusterName}/${UUID}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "Name": "bedrock-agentcore",
+  "Resources": [
+    {
+      "Name": "ab-test",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:ab-test/${ABTestId}"
+      ]
+    },
+    {
+      "Name": "apikeycredentialprovider",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/apikeycredentialprovider/${Name}"
+      ]
+    },
+    {
+      "Name": "batch-evaluate",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:batch-evaluate/${BatchEvaluationId}"
+      ]
+    },
+    {
+      "Name": "browser",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:aws:browser/${BrowserId}"
+      ]
+    },
+    {
+      "Name": "browser-custom",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:browser-custom/${BrowserId}"
+      ]
+    },
+    {
+      "Name": "browser-profile",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:browser-profile/${BrowserProfileId}"
+      ]
+    },
+    {
+      "Name": "capacity-provider",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:capacity-provider/${CapacityProviderId}"
+      ]
+    },
+    {
+      "Name": "code-interpreter",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:aws:code-interpreter/${CodeInterpreterId}"
+      ]
+    },
+    {
+      "Name": "code-interpreter-custom",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:code-interpreter-custom/${CodeInterpreterId}"
+      ]
+    },
+    {
+      "Name": "configuration-bundle",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:configuration-bundle/${ConfigurationBundleId}"
+      ]
+    },
+    {
+      "Name": "dataset",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:dataset/${DatasetId}"
+      ]
+    },
+    {
+      "Name": "evaluator",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:evaluator/${EvaluatorId}"
+      ]
+    },
+    {
+      "Name": "gateway",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:gateway/${GatewayId}"
+      ]
+    },
+    {
+      "Name": "harness",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}"
+      ]
+    },
+    {
+      "Name": "harness-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}/harness-endpoint/${Name}"
+      ]
+    },
+    {
+      "Name": "memory",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:memory/${MemoryId}"
+      ]
+    },
+    {
+      "Name": "oauth2credentialprovider",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/oauth2credentialprovider/${Name}"
+      ]
+    },
+    {
+      "Name": "online-evaluation-config",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:online-evaluation-config/${OnlineEvaluationConfigId}"
+      ]
+    },
+    {
+      "Name": "payment-manager",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:payment-manager/${PaymentManagerId}"
+      ]
+    },
+    {
+      "Name": "paymentcredentialprovider",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/paymentcredentialprovider/${Name}"
+      ]
+    },
+    {
+      "Name": "policy",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}/policy/${PolicyId}"
+      ]
+    },
+    {
+      "Name": "policy-engine",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}"
+      ]
+    },
+    {
+      "Name": "policy-generation",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}/policy-generation/${PolicyGenerationId}"
+      ]
+    },
+    {
+      "Name": "recommendation",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:recommendation/${RecommendationId}"
+      ]
+    },
+    {
+      "Name": "registry",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:registry/${RegistryId}"
+      ]
+    },
+    {
+      "Name": "registry-record",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:registry/${RegistryId}/record/${RecordId}"
+      ]
+    },
+    {
+      "Name": "runtime",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}"
+      ]
+    },
+    {
+      "Name": "runtime-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}/runtime-endpoint/${Name}"
+      ]
+    },
+    {
+      "Name": "token-vault",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}"
+      ]
+    },
+    {
+      "Name": "web-search",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:tool/web-search.v1"
+      ]
+    },
+    {
+      "Name": "workload-identity",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:workload-identity-directory/${DirectoryId}/workload-identity/${WorkloadIdentityName}"
+      ]
+    },
+    {
+      "Name": "workload-identity-directory",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:workload-identity-directory/${DirectoryId}"
+      ]
+    }
+  ]
+}

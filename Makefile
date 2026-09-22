@@ -2,6 +2,11 @@ SHELL := /bin/bash
 
 BIN     := ackctl
 CMD     := ./cmd/ackctl
+GEN     := ./cmd/ack-catalog-gen
+
+# The catalog is generated from each clone's highest stable release tag, so the clones
+# need their tags fetched.
+CONTROLLERS ?= $(shell cd .. && pwd)
 VERSION ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
 COMMIT  ?= $(shell git rev-parse --short HEAD 2>/dev/null || echo unknown)
 
@@ -37,6 +42,25 @@ unit-test:
 unit-test-race:
 	go test -race ./...
 
+catalog:
+	go run $(GEN) -controllers $(CONTROLLERS)
+
+# Runs `catalog` over a saved copy and restores it either way, so staleness is reported
+# without touching the tree and the two targets cannot disagree.
+verify-catalog:
+	@tmp=$$(mktemp -d); trap 'rm -rf "$$tmp"' EXIT; \
+	cp metadata/adoption_metadata.json metadata/provenance.json "$$tmp/"; \
+	$(MAKE) --no-print-directory catalog >/dev/null; \
+	status=0; \
+	for f in adoption_metadata.json provenance.json; do \
+		if ! diff -q "$$tmp/$$f" "metadata/$$f" >/dev/null; then \
+			echo "metadata/$$f is stale: run 'make catalog' and commit the result"; \
+			status=1; \
+		fi; \
+		cp "$$tmp/$$f" "metadata/$$f"; \
+	done; \
+	exit $$status
+
 # Tests that talk to real AWS, behind a build tag so `make test` cannot reach them.
 # Needs credentials and AWS_REGION.
 test-integration: lint-tagged test-probe test-filters test-adopt test-kinds
@@ -68,5 +92,6 @@ fmt:
 clean:
 	rm -rf ./bin
 
-.PHONY: build install test lint lint-tagged unit-test unit-test-race \
-	test-integration test-probe test-filters test-adopt test-kinds test-e2e fmt clean
+.PHONY: build install test lint lint-tagged unit-test unit-test-race catalog \
+	verify-catalog test-integration test-probe test-filters test-adopt test-kinds \
+	test-e2e fmt clean

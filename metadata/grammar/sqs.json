@@ -1,0 +1,11 @@
+{
+  "Name": "sqs",
+  "Resources": [
+    {
+      "Name": "queue",
+      "ARNFormats": [
+        "arn:${Partition}:sqs:${Region}:${Account}:${QueueName}"
+      ]
+    }
+  ]
+}

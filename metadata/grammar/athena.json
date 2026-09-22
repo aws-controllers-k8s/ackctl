@@ -1,0 +1,29 @@
+{
+  "Name": "athena",
+  "Resources": [
+    {
+      "Name": "capacity-reservation",
+      "ARNFormats": [
+        "arn:${Partition}:athena:${Region}:${Account}:capacity-reservation/${CapacityReservationName}"
+      ]
+    },
+    {
+      "Name": "datacatalog",
+      "ARNFormats": [
+        "arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}"
+      ]
+    },
+    {
+      "Name": "session",
+      "ARNFormats": [
+        "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}/session/${SessionId}"
+      ]
+    },
+    {
+      "Name": "workgroup",
+      "ARNFormats": [
+        "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "Name": "states",
+  "Resources": [
+    {
+      "Name": "activity",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}"
+      ]
+    },
+    {
+      "Name": "execution",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}"
+      ]
+    },
+    {
+      "Name": "express",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:express:${StateMachineName}:${ExecutionId}:${ExpressId}"
+      ]
+    },
+    {
+      "Name": "labelled execution",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}/${MapRunLabel}:${ExecutionId}"
+      ]
+    },
+    {
+      "Name": "labelled express",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:express:${StateMachineName}/${MapRunLabel}:${ExecutionId}:${ExpressId}"
+      ]
+    },
+    {
+      "Name": "maprun",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:mapRun:${StateMachineName}/${MapRunLabel}:${MapRunId}"
+      ]
+    },
+    {
+      "Name": "statemachine",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}"
+      ]
+    },
+    {
+      "Name": "statemachinealias",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}:${StateMachineAliasName}"
+      ]
+    },
+    {
+      "Name": "statemachineversion",
+      "ARNFormats": [
+        "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}:${StateMachineVersionId}"
+      ]
+    }
+  ]
+}

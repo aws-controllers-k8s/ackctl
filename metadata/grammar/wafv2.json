@@ -1,0 +1,83 @@
+{
+  "Name": "wafv2",
+  "Resources": [
+    {
+      "Name": "agentcore-gateway",
+      "ARNFormats": [
+        "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:gateway/${GatewayId}"
+      ]
+    },
+    {
+      "Name": "amplify-app",
+      "ARNFormats": [
+        "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}"
+      ]
+    },
+    {
+      "Name": "apigateway",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${ApiId}/stages/${StageName}"
+      ]
+    },
+    {
+      "Name": "apprunner",
+      "ARNFormats": [
+        "arn:${Partition}:apprunner:${Region}:${Account}:service/${ServiceName}/${ServiceId}"
+      ]
+    },
+    {
+      "Name": "appsync",
+      "ARNFormats": [
+        "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}"
+      ]
+    },
+    {
+      "Name": "ipset",
+      "ARNFormats": [
+        "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}"
+      ]
+    },
+    {
+      "Name": "loadbalancer/app/",
+      "ARNFormats": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}"
+      ]
+    },
+    {
+      "Name": "managedruleset",
+      "ARNFormats": [
+        "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/managedruleset/${Name}/${Id}"
+      ]
+    },
+    {
+      "Name": "regexpatternset",
+      "ARNFormats": [
+        "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}"
+      ]
+    },
+    {
+      "Name": "rulegroup",
+      "ARNFormats": [
+        "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}"
+      ]
+    },
+    {
+      "Name": "userpool",
+      "ARNFormats": [
+        "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}"
+      ]
+    },
+    {
+      "Name": "verified-access-instance",
+      "ARNFormats": [
+        "arn:${Partition}:ec2:${Region}:${Account}:verified-access-instance/${VerifiedAccessInstanceId}"
+      ]
+    },
+    {
+      "Name": "webacl",
+      "ARNFormats": [
+        "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}"
+      ]
+    }
+  ]
+}

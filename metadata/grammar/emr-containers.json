@@ -1,0 +1,35 @@
+{
+  "Name": "emr-containers",
+  "Resources": [
+    {
+      "Name": "jobRun",
+      "ARNFormats": [
+        "arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/jobruns/${JobRunId}"
+      ]
+    },
+    {
+      "Name": "jobTemplate",
+      "ARNFormats": [
+        "arn:${Partition}:emr-containers:${Region}:${Account}:/jobtemplates/${JobTemplateId}"
+      ]
+    },
+    {
+      "Name": "managedEndpoint",
+      "ARNFormats": [
+        "arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/endpoints/${EndpointId}"
+      ]
+    },
+    {
+      "Name": "securityConfiguration",
+      "ARNFormats": [
+        "arn:${Partition}:emr-containers:${Region}:${Account}:/securityconfigurations/${SecurityConfigurationId}"
+      ]
+    },
+    {
+      "Name": "virtualCluster",
+      "ARNFormats": [
+        "arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}"
+      ]
+    }
+  ]
+}

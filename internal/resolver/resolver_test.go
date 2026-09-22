@@ -61,10 +61,28 @@ func TestResolveARN_RealARNs(t *testing.T) {
 			fields: map[string]string{"name": "my-prod-bucket"},
 		},
 		{
-			name:    "ecr repository (stutter-strip)",
+			name:    "ecr repository (stutter-strip, optional registryID from the header)",
 			service: "ecr", kind: "Repository",
 			arn:    "arn:aws:ecr:us-east-1:123456789012:repository/my-repo",
-			fields: map[string]string{"name": "my-repo"},
+			fields: map[string]string{"name": "my-repo", "registryID": "123456789012"},
+		},
+		{
+			name:    "ecr repository with a namespace (name contains '/')",
+			service: "ecr", kind: "Repository",
+			arn:    "arn:aws:ecr:us-east-1:123456789012:repository/team/my-repo",
+			fields: map[string]string{"name": "team/my-repo", "registryID": "123456789012"},
+		},
+		{
+			name:    "cloudwatch log group (name is a path)",
+			service: "cloudwatchlogs", kind: "LogGroup",
+			arn:    "arn:aws:logs:us-east-1:123456789012:log-group:/aws/lambda/my-fn",
+			fields: map[string]string{"name": "/aws/lambda/my-fn"},
+		},
+		{
+			name:    "cloudwatch alarm with '/' in the name (auto-created target tracking)",
+			service: "cloudwatch", kind: "MetricAlarm",
+			arn:    "arn:aws:cloudwatch:us-east-1:123456789012:alarm:TargetTracking-table/my-table-AlarmHigh-guid",
+			fields: map[string]string{"name": "TargetTracking-table/my-table-AlarmHigh-guid"},
 		},
 		{
 			name:    "rds db instance (colon-type, via override)",
@@ -131,6 +149,15 @@ func TestResolveARN_Overrides(t *testing.T) {
 			"arn:aws:mq:us-east-1:111:broker:my-broker:b-1234", map[string]string{"brokerID": "b-1234"}},
 		{"eventbridge rule (default-bus form)", "eventbridge", "Rule",
 			"arn:aws:events:us-east-1:111:rule/my-rule", map[string]string{"name": "my-rule"}},
+		{"eventbridge rule on a custom bus (two-segment form binds the bus too)", "eventbridge", "Rule",
+			"arn:aws:events:us-east-1:111:rule/my-bus/my-rule",
+			map[string]string{"name": "my-rule", "eventBusName": "my-bus"}},
+		{"application load balancer (v2 three-segment form)", "elbv2", "LoadBalancer",
+			"arn:aws:elasticloadbalancing:us-east-1:111:loadbalancer/app/my-alb/50dc6c495c0c9188",
+			map[string]string{"name": "my-alb"}},
+		{"network load balancer (v2 three-segment form)", "elbv2", "LoadBalancer",
+			"arn:aws:elasticloadbalancing:us-east-1:111:loadbalancer/net/my-nlb/50dc6c495c0c9188",
+			map[string]string{"name": "my-nlb"}},
 		{"ecs task definition (family, revision ignored)", "ecs", "TaskDefinition",
 			"arn:aws:ecs:us-east-1:111:task-definition/my-fam:3", map[string]string{"family": "my-fam"}},
 		{"prometheus rule groups namespace (multi-key)", "prometheusservice", "RuleGroupsNamespace",
@@ -220,6 +247,7 @@ func TestCatalogExcludesUnresolvableKinds(t *testing.T) {
 		{"apigatewayv2", "Deployment"},
 		{"apigatewayv2", "APIMapping"},
 		{"eventbridge", "Archive"},
+		{"sagemaker", "App"},
 	} {
 		t.Run(tc.service+"/"+tc.kind, func(t *testing.T) {
 			_, ok := c.LookupByServiceKind(tc.service, tc.kind)
@@ -262,6 +290,33 @@ func TestResolveARN_Refuses(t *testing.T) {
 		_, ok := err.(*UnresolvableError)
 		assert.True(t, ok, "want UnresolvableError, got %T", err)
 	})
+
+	t.Run("qualified ARN carrying an extra colon segment", func(t *testing.T) {
+		// Read greedily these yield "/aws/lambda/my-fn:*" and "my-fn:PROD", names no log
+		// group or function has, so the CR would adopt nothing.
+		for _, tc := range []struct{ service, kind, arn string }{
+			{"cloudwatchlogs", "LogGroup",
+				"arn:aws:logs:us-east-1:123456789012:log-group:/aws/lambda/my-fn:*"},
+			{"lambda", "Function",
+				"arn:aws:lambda:us-east-1:123456789012:function:my-fn:PROD"},
+		} {
+			_, err := resolve(t, r, c, tc.service, tc.kind, tc.arn)
+			require.Error(t, err, tc.arn)
+			_, ok := err.(*UnresolvableError)
+			assert.True(t, ok, "want UnresolvableError for %s, got %T", tc.arn, err)
+		}
+	})
+
+	t.Run("classic ELB matches no elbv2 shape", func(t *testing.T) {
+		// The shared elasticloadbalancing:loadbalancer type filter returns classic
+		// ELBs too; the elbv2 controller cannot manage one, so it must be skipped
+		// rather than emitted as a v2 CR that adopts a same-named ALB.
+		_, err := resolve(t, r, c, "elbv2", "LoadBalancer",
+			"arn:aws:elasticloadbalancing:us-east-1:111:loadbalancer/my-classic-elb")
+		require.Error(t, err)
+		_, ok := err.(*UnresolvableError)
+		assert.True(t, ok, "want UnresolvableError, got %T", err)
+	})
 }
 
 // TestResolveARN_NeverPartial asserts that when resolution succeeds, EVERY
@@ -270,7 +325,7 @@ func TestResolveARN_NeverPartial(t *testing.T) {
 	r, c := newResolver(t)
 	got, err := resolve(t, r, c, "eks", "Nodegroup", "arn:aws:eks:us-west-2:123456789012:nodegroup/c/ng/uuid")
 	require.NoError(t, err)
-	for _, b := range got.Resource.Bindings {
+	for _, b := range got.Bindings {
 		v, ok := got.Fields[b.Key]
 		assert.True(t, ok, "key %q missing", b.Key)
 		assert.NotEmpty(t, v, "key %q empty", b.Key)

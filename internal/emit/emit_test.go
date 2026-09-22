@@ -33,14 +33,14 @@ func nodegroupResolved() *resolver.Resolved {
 func nodegroupFor(cluster, ng string) *resolver.Resolved {
 	return &resolver.Resolved{
 		Fields: map[string]string{"clusterName": cluster, "name": ng},
+		Bindings: []metadata.Binding{
+			{Key: "clusterName", From: "${ClusterName}"},
+			{Key: "name", From: "${NodegroupName}"},
+		},
 		Resource: metadata.Resource{
 			Kind:    "Nodegroup",
 			Group:   "eks.services.k8s.aws",
 			Version: "v1alpha1",
-			Bindings: []metadata.Binding{
-				{Key: "clusterName", From: "${ClusterName}"},
-				{Key: "name", From: "${NodegroupName}"},
-			},
 		},
 	}
 }
@@ -161,9 +161,9 @@ func TestDefaultAdoptionSet_DerivedFromSelector(t *testing.T) {
 
 func bucketResolved(name string) *resolver.Resolved {
 	return &resolver.Resolved{
-		Fields: map[string]string{"name": name},
-		Resource: metadata.Resource{Kind: "Bucket",
-			Bindings: []metadata.Binding{{Key: "name", From: "${BucketName}"}}},
+		Fields:   map[string]string{"name": name},
+		Bindings: []metadata.Binding{{Key: "name", From: "${BucketName}"}},
+		Resource: metadata.Resource{Kind: "Bucket"},
 	}
 }
 
@@ -174,9 +174,9 @@ func TestDefaultName(t *testing.T) {
 
 	// ARN-primary: bindings carry only "arn", so use the ARN tail.
 	arnPrimary := &resolver.Resolved{
-		Fields: map[string]string{"arn": "arn:aws:sns:us-east-1:1:my-topic"},
-		Resource: metadata.Resource{Kind: "Topic", ARNPrimary: true,
-			Bindings: []metadata.Binding{{Key: "arn", From: "${ARN}"}}},
+		Fields:   map[string]string{"arn": "arn:aws:sns:us-east-1:1:my-topic"},
+		Bindings: []metadata.Binding{{Key: "arn", From: "${ARN}"}},
+		Resource: metadata.Resource{Kind: "Topic", ARNPrimary: true},
 	}
 	name = DefaultName(arnPrimary, "arn:aws:sns:us-east-1:1:my-topic")
 	assert.Regexp(t, `^my-topic-[0-9a-f]{8}$`, name)
@@ -188,9 +188,9 @@ func TestDefaultName(t *testing.T) {
 // named after the tail.
 func TestDefaultName_TailsOnlyARNPrimary(t *testing.T) {
 	notPrimary := &resolver.Resolved{
-		Fields: map[string]string{"roleARN": "arn:aws:iam::1:role/my-role"},
-		Resource: metadata.Resource{Kind: "Thing",
-			Bindings: []metadata.Binding{{Key: "roleARN", From: "${RoleARN}"}}},
+		Fields:   map[string]string{"roleARN": "arn:aws:iam::1:role/my-role"},
+		Bindings: []metadata.Binding{{Key: "roleARN", From: "${RoleARN}"}},
+		Resource: metadata.Resource{Kind: "Thing"},
 	}
 	name := DefaultName(notPrimary, "arn:aws:thing:us-west-2:1:thing/t1")
 	assert.Regexp(t, `^arn-aws-iam-1-role-my-role-[0-9a-f]{8}$`, name,

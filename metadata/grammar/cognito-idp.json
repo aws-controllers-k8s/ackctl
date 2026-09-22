@@ -1,0 +1,17 @@
+{
+  "Name": "cognito-idp",
+  "Resources": [
+    {
+      "Name": "userpool",
+      "ARNFormats": [
+        "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}"
+      ]
+    },
+    {
+      "Name": "webacl",
+      "ARNFormats": [
+        "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}"
+      ]
+    }
+  ]
+}

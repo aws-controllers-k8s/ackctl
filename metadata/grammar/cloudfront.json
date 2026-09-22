@@ -1,0 +1,119 @@
+{
+  "Name": "cloudfront",
+  "Resources": [
+    {
+      "Name": "anycast-ip-list",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:anycast-ip-list/${Id}"
+      ]
+    },
+    {
+      "Name": "cache-policy",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}"
+      ]
+    },
+    {
+      "Name": "connection-function",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:connection-function/${Id}"
+      ]
+    },
+    {
+      "Name": "connection-group",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:connection-group/${Id}"
+      ]
+    },
+    {
+      "Name": "continuous-deployment-policy",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:continuous-deployment-policy/${Id}"
+      ]
+    },
+    {
+      "Name": "distribution",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}"
+      ]
+    },
+    {
+      "Name": "distribution-tenant",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:distribution-tenant/${Id}"
+      ]
+    },
+    {
+      "Name": "field-level-encryption-config",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:field-level-encryption-config/${Id}"
+      ]
+    },
+    {
+      "Name": "field-level-encryption-profile",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:field-level-encryption-profile/${Id}"
+      ]
+    },
+    {
+      "Name": "function",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:function/${Name}"
+      ]
+    },
+    {
+      "Name": "key-value-store",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:key-value-store/${Name}"
+      ]
+    },
+    {
+      "Name": "origin-access-control",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:origin-access-control/${Id}"
+      ]
+    },
+    {
+      "Name": "origin-access-identity",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}"
+      ]
+    },
+    {
+      "Name": "origin-request-policy",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}"
+      ]
+    },
+    {
+      "Name": "realtime-log-config",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:realtime-log-config/${Name}"
+      ]
+    },
+    {
+      "Name": "response-headers-policy",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:response-headers-policy/${Id}"
+      ]
+    },
+    {
+      "Name": "streaming-distribution",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}"
+      ]
+    },
+    {
+      "Name": "trust-store",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:trust-store/${Id}"
+      ]
+    },
+    {
+      "Name": "vpcorigin",
+      "ARNFormats": [
+        "arn:${Partition}:cloudfront::${Account}:vpcorigin/${Id}"
+      ]
+    }
+  ]
+}

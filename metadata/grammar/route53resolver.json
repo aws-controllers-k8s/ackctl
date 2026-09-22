@@ -1,0 +1,71 @@
+{
+  "Name": "route53resolver",
+  "Resources": [
+    {
+      "Name": "autodefined-rule",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:autodefined-rule/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "firewall-config",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-config/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "firewall-domain-list",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-domain-list/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "firewall-rule-group",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "firewall-rule-group-association",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group-association/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "outpost-resolver",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:outpost-resolver/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "resolver-config",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-config/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "resolver-dnssec-config",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-dnssec-config/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "resolver-endpoint",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "resolver-query-log-config",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-query-log-config/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "resolver-rule",
+      "ARNFormats": [
+        "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}"
+      ]
+    }
+  ]
+}

@@ -220,7 +220,6 @@ var Kinds = []KindEntry{
 	{"s3tables", "TableBucket", nil, SkipPrereq, "table buckets are not available in every region"},
 	{"s3vectors", "Index", nil, SkipPrereq, "needs a vector bucket"},
 	{"s3vectors", "VectorBucket", nil, SkipPrereq, "vector buckets are not available in every region"},
-	{"sagemaker", "App", nil, SkipSlow, "needs a domain and a user profile"},
 	{"sagemaker", "DataQualityJobDefinition", nil, SkipSlow, "needs an endpoint and a baseline job"},
 	{"sagemaker", "Domain", nil, SkipCost, "a domain provisions billable EFS storage"},
 	{"sagemaker", "Endpoint", nil, SkipCost, "an endpoint bills per instance hour"},

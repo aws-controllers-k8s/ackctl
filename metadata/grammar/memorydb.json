@@ -1,0 +1,59 @@
+{
+  "Name": "memorydb",
+  "Resources": [
+    {
+      "Name": "acl",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb:${Region}:${Account}:acl/${AclName}"
+      ]
+    },
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb:${Region}:${Account}:cluster/${ClusterName}"
+      ]
+    },
+    {
+      "Name": "multiregioncluster",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb::${Account}:multiregioncluster/${ClusterName}"
+      ]
+    },
+    {
+      "Name": "multiregionparametergroup",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb::${Account}:multiregionparametergroup/${MultiRegionParameterGroupName}"
+      ]
+    },
+    {
+      "Name": "parametergroup",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb:${Region}:${Account}:parametergroup/${ParameterGroupName}"
+      ]
+    },
+    {
+      "Name": "reservednode",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb:${Region}:${Account}:reservednode/${ReservationID}"
+      ]
+    },
+    {
+      "Name": "snapshot",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb:${Region}:${Account}:snapshot/${SnapshotName}"
+      ]
+    },
+    {
+      "Name": "subnetgroup",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb:${Region}:${Account}:subnetgroup/${SubnetGroupName}"
+      ]
+    },
+    {
+      "Name": "user",
+      "ARNFormats": [
+        "arn:${Partition}:memorydb:${Region}:${Account}:user/${UserName}"
+      ]
+    }
+  ]
+}

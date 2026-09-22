@@ -1,0 +1,17 @@
+{
+  "Name": "autoscaling",
+  "Resources": [
+    {
+      "Name": "autoScalingGroup",
+      "ARNFormats": [
+        "arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}"
+      ]
+    },
+    {
+      "Name": "launchConfiguration",
+      "ARNFormats": [
+        "arn:${Partition}:autoscaling:${Region}:${Account}:launchConfiguration:${Id}:launchConfigurationName/${LaunchConfigurationName}"
+      ]
+    }
+  ]
+}

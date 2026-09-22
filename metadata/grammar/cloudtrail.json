@@ -1,0 +1,29 @@
+{
+  "Name": "cloudtrail",
+  "Resources": [
+    {
+      "Name": "channel",
+      "ARNFormats": [
+        "arn:${Partition}:cloudtrail:${Region}:${Account}:channel/${ChannelId}"
+      ]
+    },
+    {
+      "Name": "dashboard",
+      "ARNFormats": [
+        "arn:${Partition}:cloudtrail:${Region}:${Account}:dashboard/${DashboardName}"
+      ]
+    },
+    {
+      "Name": "eventdatastore",
+      "ARNFormats": [
+        "arn:${Partition}:cloudtrail:${Region}:${Account}:eventdatastore/${EventDataStoreId}"
+      ]
+    },
+    {
+      "Name": "trail",
+      "ARNFormats": [
+        "arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}"
+      ]
+    }
+  ]
+}

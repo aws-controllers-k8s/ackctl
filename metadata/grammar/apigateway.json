@@ -1,0 +1,429 @@
+{
+  "Name": "apigateway",
+  "Resources": [
+    {
+      "Name": "AccessLogSettings",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/accesslogsettings"
+      ]
+    },
+    {
+      "Name": "Account",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/account"
+      ]
+    },
+    {
+      "Name": "Api",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}"
+      ]
+    },
+    {
+      "Name": "ApiKey",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apikeys/${ApiKeyId}"
+      ]
+    },
+    {
+      "Name": "ApiKeys",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apikeys"
+      ]
+    },
+    {
+      "Name": "ApiMapping",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/apimappings/${ApiMappingId}"
+      ]
+    },
+    {
+      "Name": "ApiMappings",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/apimappings"
+      ]
+    },
+    {
+      "Name": "Apis",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis"
+      ]
+    },
+    {
+      "Name": "Authorizer",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/authorizers/${AuthorizerId}",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers/${AuthorizerId}"
+      ]
+    },
+    {
+      "Name": "Authorizers",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/authorizers",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers"
+      ]
+    },
+    {
+      "Name": "AuthorizersCache",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/cache/authorizers"
+      ]
+    },
+    {
+      "Name": "BasePathMapping",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings/${BasePath}"
+      ]
+    },
+    {
+      "Name": "BasePathMappings",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings"
+      ]
+    },
+    {
+      "Name": "ClientCertificate",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/clientcertificates/${ClientCertificateId}"
+      ]
+    },
+    {
+      "Name": "ClientCertificates",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/clientcertificates"
+      ]
+    },
+    {
+      "Name": "Cors",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/cors"
+      ]
+    },
+    {
+      "Name": "Deployment",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/deployments/${DeploymentId}",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments/${DeploymentId}"
+      ]
+    },
+    {
+      "Name": "Deployments",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/deployments",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments"
+      ]
+    },
+    {
+      "Name": "DocumentationPart",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts/${DocumentationPartId}"
+      ]
+    },
+    {
+      "Name": "DocumentationParts",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts"
+      ]
+    },
+    {
+      "Name": "DocumentationVersion",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions/${DocumentationVersionId}"
+      ]
+    },
+    {
+      "Name": "DocumentationVersions",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions"
+      ]
+    },
+    {
+      "Name": "DomainName",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}"
+      ]
+    },
+    {
+      "Name": "DomainNameAccessAssociation",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/domainnameaccessassociations/domainname/${DomainName}/${SourceType}/${SourceId}"
+      ]
+    },
+    {
+      "Name": "DomainNameAccessAssociations",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/domainnameaccessassociations"
+      ]
+    },
+    {
+      "Name": "DomainNames",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames"
+      ]
+    },
+    {
+      "Name": "ExportedAPI",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/exports/${Specification}"
+      ]
+    },
+    {
+      "Name": "GatewayResponse",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses/${ResponseType}"
+      ]
+    },
+    {
+      "Name": "GatewayResponses",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses"
+      ]
+    },
+    {
+      "Name": "Integration",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration"
+      ]
+    },
+    {
+      "Name": "IntegrationResponse",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}/integrationresponses/${IntegrationResponseId}",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration/responses/${StatusCode}"
+      ]
+    },
+    {
+      "Name": "IntegrationResponses",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}/integrationresponses"
+      ]
+    },
+    {
+      "Name": "Integrations",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations"
+      ]
+    },
+    {
+      "Name": "Method",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}"
+      ]
+    },
+    {
+      "Name": "MethodResponse",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/responses/${StatusCode}"
+      ]
+    },
+    {
+      "Name": "Model",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models/${ModelId}",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models/${ModelName}"
+      ]
+    },
+    {
+      "Name": "ModelTemplate",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models/${ModelId}/template"
+      ]
+    },
+    {
+      "Name": "Models",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/models",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models"
+      ]
+    },
+    {
+      "Name": "Portal",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/portals/${PortalId}"
+      ]
+    },
+    {
+      "Name": "PortalProduct",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/portalproducts/${PortalProductId}"
+      ]
+    },
+    {
+      "Name": "PrivateBasePathMapping",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}+${DomainIdentifier}/basepathmappings/${BasePath}"
+      ]
+    },
+    {
+      "Name": "PrivateBasePathMappings",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}+${DomainIdentifier}/basepathmappings"
+      ]
+    },
+    {
+      "Name": "PrivateDomainName",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/domainnames/${DomainName}+${DomainIdentifier}"
+      ]
+    },
+    {
+      "Name": "ProductPage",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/portalproducts/${PortalProductId}/productpages/${ProductPageId}"
+      ]
+    },
+    {
+      "Name": "ProductRestEndpointPage",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/portalproducts/${PortalProductId}/productrestendpointpages/${ProductRestEndpointPageId}"
+      ]
+    },
+    {
+      "Name": "RequestValidator",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators/${RequestValidatorId}"
+      ]
+    },
+    {
+      "Name": "RequestValidators",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators"
+      ]
+    },
+    {
+      "Name": "Resource",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}"
+      ]
+    },
+    {
+      "Name": "Resources",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources"
+      ]
+    },
+    {
+      "Name": "RestApi",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}"
+      ]
+    },
+    {
+      "Name": "RestApis",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis"
+      ]
+    },
+    {
+      "Name": "Route",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}"
+      ]
+    },
+    {
+      "Name": "RouteRequestParameter",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/requestparameters/${RequestParameterKey}"
+      ]
+    },
+    {
+      "Name": "RouteResponse",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/routeresponses/${RouteResponseId}"
+      ]
+    },
+    {
+      "Name": "RouteResponses",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}/routeresponses"
+      ]
+    },
+    {
+      "Name": "RouteSettings",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}/routesettings/${RouteKey}"
+      ]
+    },
+    {
+      "Name": "Routes",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes"
+      ]
+    },
+    {
+      "Name": "RoutingRule",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}:${Account}:/domainnames/${DomainName}/routingrules/${RoutingRuleId}"
+      ]
+    },
+    {
+      "Name": "Sdk",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}/sdks/${SdkType}"
+      ]
+    },
+    {
+      "Name": "Stage",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}"
+      ]
+    },
+    {
+      "Name": "Stages",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages",
+        "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages"
+      ]
+    },
+    {
+      "Name": "Tags",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/tags/${UrlEncodedResourceARN}"
+      ]
+    },
+    {
+      "Name": "Template",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/restapis/models/${ModelName}/template"
+      ]
+    },
+    {
+      "Name": "UsagePlan",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}"
+      ]
+    },
+    {
+      "Name": "UsagePlanKey",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys/${Id}"
+      ]
+    },
+    {
+      "Name": "UsagePlanKeys",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys"
+      ]
+    },
+    {
+      "Name": "UsagePlans",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/usageplans"
+      ]
+    },
+    {
+      "Name": "VpcLink",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}"
+      ]
+    },
+    {
+      "Name": "VpcLinks",
+      "ARNFormats": [
+        "arn:${Partition}:apigateway:${Region}::/vpclinks"
+      ]
+    }
+  ]
+}

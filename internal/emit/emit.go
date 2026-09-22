@@ -195,9 +195,10 @@ func arnDigest(arnStr string) string {
 // It depends only on the resource's identity, not on the adoption set, so re-adopting the
 // same resource hits AlreadyExists instead of creating a second CR.
 func DefaultName(res *resolver.Resolved, arnStr string) string {
-	// Every identifier value, in binding order.
+	// Every declared binding, in the matched template's order: dropping one would rename
+	// the CRs of resources an earlier release already adopted.
 	var parts []string
-	for _, b := range res.Resource.Bindings {
+	for _, b := range res.Bindings {
 		if v := res.Fields[b.Key]; v != "" {
 			parts = append(parts, v)
 		}

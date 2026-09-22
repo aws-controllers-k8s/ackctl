@@ -1,0 +1,23 @@
+{
+  "Name": "cassandra",
+  "Resources": [
+    {
+      "Name": "keyspace",
+      "ARNFormats": [
+        "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/"
+      ]
+    },
+    {
+      "Name": "stream",
+      "ARNFormats": [
+        "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}/stream/${StreamLabel}"
+      ]
+    },
+    {
+      "Name": "table",
+      "ARNFormats": [
+        "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "Name": "rbin",
+  "Resources": [
+    {
+      "Name": "rule",
+      "ARNFormats": [
+        "arn:${Partition}:rbin:${Region}:${Account}:rule/${ResourceName}"
+      ]
+    }
+  ]
+}

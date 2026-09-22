@@ -8,12 +8,16 @@
       "group": "acm.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "acm:acme-domain-validation",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -24,12 +28,16 @@
       "group": "acm.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "acm:acme-endpoint",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -40,12 +48,16 @@
       "group": "acm.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "acm:certificate",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -56,12 +68,16 @@
       "group": "acmpca.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "acm-pca:certificate-authority",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -72,12 +88,16 @@
       "group": "apigateway.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "apigateway:apikey",
-      "arn_template": "arn:${Partition}:apigateway:${Region}::/apikeys/${ApiKeyId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ApiKeyId}"
+          "arn_template": "arn:${Partition}:apigateway:${Region}::/apikeys/${ApiKeyId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ApiKeyId}"
+            }
+          ]
         }
       ]
     },
@@ -88,12 +108,16 @@
       "group": "apigateway.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "apigateway:restapi",
-      "arn_template": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${RestApiId}"
+          "arn_template": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${RestApiId}"
+            }
+          ]
         }
       ]
     },
@@ -104,12 +128,16 @@
       "group": "apigateway.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "apigateway:vpclink",
-      "arn_template": "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${VpcLinkId}"
+          "arn_template": "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${VpcLinkId}"
+            }
+          ]
         }
       ]
     },
@@ -120,12 +148,16 @@
       "group": "apigatewayv2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "apigateway:domainnames",
-      "arn_template": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "domainName",
-          "from": "${DomainName}"
+          "arn_template": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}",
+          "bindings": [
+            {
+              "key": "domainName",
+              "from": "${DomainName}"
+            }
+          ]
         }
       ]
     },
@@ -136,16 +168,20 @@
       "group": "apigatewayv2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "apigateway:apis/stages",
-      "arn_template": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "apiID",
-          "from": "${ApiId}"
-        },
-        {
-          "key": "stageName",
-          "from": "${StageName}"
+          "arn_template": "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}",
+          "bindings": [
+            {
+              "key": "apiID",
+              "from": "${ApiId}"
+            },
+            {
+              "key": "stageName",
+              "from": "${StageName}"
+            }
+          ]
         }
       ]
     },
@@ -156,12 +192,16 @@
       "group": "apigatewayv2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "apigateway:vpclinks",
-      "arn_template": "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "vpcLinkID",
-          "from": "${VpcLinkId}"
+          "arn_template": "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}",
+          "bindings": [
+            {
+              "key": "vpcLinkID",
+              "from": "${VpcLinkId}"
+            }
+          ]
         }
       ]
     },
@@ -172,12 +212,16 @@
       "group": "athena.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "athena:datacatalog",
-      "arn_template": "arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${DataCatalogName}"
+          "arn_template": "arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${DataCatalogName}"
+            }
+          ]
         }
       ]
     },
@@ -188,12 +232,16 @@
       "group": "athena.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "athena:workgroup",
-      "arn_template": "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${WorkGroupName}"
+          "arn_template": "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${WorkGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -204,12 +252,16 @@
       "group": "autoscaling.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "autoscaling:autoscalinggroup",
-      "arn_template": "arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${GroupFriendlyName}"
+          "arn_template": "arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${GroupFriendlyName}"
+            }
+          ]
         }
       ]
     },
@@ -220,12 +272,16 @@
       "group": "backup.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "backup:backup-plan",
-      "arn_template": "arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${BackupPlanId}"
+          "arn_template": "arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${BackupPlanId}"
+            }
+          ]
         }
       ]
     },
@@ -236,12 +292,16 @@
       "group": "backup.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "backup:backup-vault",
-      "arn_template": "arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${BackupVaultName}"
+          "arn_template": "arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${BackupVaultName}"
+            }
+          ]
         }
       ]
     },
@@ -252,12 +312,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:runtime",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "agentRuntimeID",
-          "from": "${RuntimeId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}",
+          "bindings": [
+            {
+              "key": "agentRuntimeID",
+              "from": "${RuntimeId}"
+            }
+          ]
         }
       ]
     },
@@ -268,16 +332,20 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:runtime-endpoint",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}/runtime-endpoint/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${Name}"
-        },
-        {
-          "key": "agentRuntimeID",
-          "from": "${RuntimeId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:runtime/${RuntimeId}/runtime-endpoint/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            },
+            {
+              "key": "agentRuntimeID",
+              "from": "${RuntimeId}"
+            }
+          ]
         }
       ]
     },
@@ -288,12 +356,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:apikeycredentialprovider",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/apikeycredentialprovider/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${Name}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:token-vault/${TokenVaultId}/apikeycredentialprovider/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            }
+          ]
         }
       ]
     },
@@ -304,12 +376,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:browser",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:aws:browser/${BrowserId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${BrowserId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:aws:browser/${BrowserId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${BrowserId}"
+            }
+          ]
         }
       ]
     },
@@ -320,12 +396,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:browser-profile",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:browser-profile/${BrowserProfileId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${BrowserProfileId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:browser-profile/${BrowserProfileId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${BrowserProfileId}"
+            }
+          ]
         }
       ]
     },
@@ -336,12 +416,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:code-interpreter",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:aws:code-interpreter/${CodeInterpreterId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${CodeInterpreterId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:aws:code-interpreter/${CodeInterpreterId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${CodeInterpreterId}"
+            }
+          ]
         }
       ]
     },
@@ -352,12 +436,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:gateway",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:gateway/${GatewayId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "gatewayID",
-          "from": "${GatewayId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:gateway/${GatewayId}",
+          "bindings": [
+            {
+              "key": "gatewayID",
+              "from": "${GatewayId}"
+            }
+          ]
         }
       ]
     },
@@ -368,12 +456,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:harness",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "harnessID",
-          "from": "${HarnessId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}",
+          "bindings": [
+            {
+              "key": "harnessID",
+              "from": "${HarnessId}"
+            }
+          ]
         }
       ]
     },
@@ -384,16 +476,20 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:harness-endpoint",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}/harness-endpoint/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${Name}"
-        },
-        {
-          "key": "harnessID",
-          "from": "${HarnessId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:harness/${HarnessId}/harness-endpoint/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            },
+            {
+              "key": "harnessID",
+              "from": "${HarnessId}"
+            }
+          ]
         }
       ]
     },
@@ -404,12 +500,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:memory",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:memory/${MemoryId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${MemoryId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:memory/${MemoryId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${MemoryId}"
+            }
+          ]
         }
       ]
     },
@@ -420,16 +520,20 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:policy",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}/policy/${PolicyId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${PolicyId}"
-        },
-        {
-          "key": "policyEngineID",
-          "from": "${PolicyEngineId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}/policy/${PolicyId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${PolicyId}"
+            },
+            {
+              "key": "policyEngineID",
+              "from": "${PolicyEngineId}"
+            }
+          ]
         }
       ]
     },
@@ -440,12 +544,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:policy-engine",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${PolicyEngineId}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:policy-engine/${PolicyEngineId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${PolicyEngineId}"
+            }
+          ]
         }
       ]
     },
@@ -456,12 +564,16 @@
       "group": "bedrockagentcorecontrol.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "bedrock-agentcore:workload-identity",
-      "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:workload-identity-directory/${DirectoryId}/workload-identity/${WorkloadIdentityName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${WorkloadIdentityName}"
+          "arn_template": "arn:${Partition}:bedrock-agentcore:${Region}:${Account}:workload-identity-directory/${DirectoryId}/workload-identity/${WorkloadIdentityName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${WorkloadIdentityName}"
+            }
+          ]
         }
       ]
     },
@@ -472,12 +584,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:cache-policy",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -488,12 +604,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:connection-group",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:connection-group/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:connection-group/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -504,12 +624,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:distribution",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${DistributionId}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${DistributionId}"
+            }
+          ]
         }
       ]
     },
@@ -520,12 +644,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:distribution-tenant",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:distribution-tenant/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:distribution-tenant/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -536,12 +664,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:function",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:function/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${Name}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:function/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            }
+          ]
         }
       ]
     },
@@ -552,12 +684,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:origin-access-control",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:origin-access-control/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:origin-access-control/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -568,12 +704,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:origin-request-policy",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -584,12 +724,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:response-headers-policy",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:response-headers-policy/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:response-headers-policy/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -600,12 +744,16 @@
       "group": "cloudfront.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudfront:vpcorigin",
-      "arn_template": "arn:${Partition}:cloudfront::${Account}:vpcorigin/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:cloudfront::${Account}:vpcorigin/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -616,12 +764,16 @@
       "group": "cloudtrail.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudtrail:eventdatastore",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -632,12 +784,16 @@
       "group": "cloudtrail.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudtrail:trail",
-      "arn_template": "arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${TrailName}"
+          "arn_template": "arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${TrailName}"
+            }
+          ]
         }
       ]
     },
@@ -648,12 +804,16 @@
       "group": "cloudwatch.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudwatch:dashboard",
-      "arn_template": "arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "dashboardName",
-          "from": "${DashboardName}"
+          "arn_template": "arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}",
+          "bindings": [
+            {
+              "key": "dashboardName",
+              "from": "${DashboardName}"
+            }
+          ]
         }
       ]
     },
@@ -664,12 +824,16 @@
       "group": "cloudwatch.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudwatch:alarm",
-      "arn_template": "arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${AlarmName}"
+          "arn_template": "arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${AlarmName}"
+            }
+          ]
         }
       ]
     },
@@ -680,12 +844,16 @@
       "group": "cloudwatch.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cloudwatch:metric-stream",
-      "arn_template": "arn:${Partition}:cloudwatch:${Region}:${Account}:metric-stream/${MetricStreamName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${MetricStreamName}"
+          "arn_template": "arn:${Partition}:cloudwatch:${Region}:${Account}:metric-stream/${MetricStreamName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${MetricStreamName}"
+            }
+          ]
         }
       ]
     },
@@ -696,12 +864,16 @@
       "group": "cloudwatchlogs.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "logs:log-group",
-      "arn_template": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${LogGroupName}"
+          "arn_template": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${LogGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -712,12 +884,16 @@
       "group": "codeartifact.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "codeartifact:domain",
-      "arn_template": "arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${DomainName}"
+          "arn_template": "arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${DomainName}"
+            }
+          ]
         }
       ]
     },
@@ -728,12 +904,16 @@
       "group": "cognitoidentityprovider.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cognito-idp:userpool",
-      "arn_template": "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${UserPoolId}"
+          "arn_template": "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${UserPoolId}"
+            }
+          ]
         }
       ]
     },
@@ -744,12 +924,16 @@
       "group": "dsql.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "dsql:cluster",
-      "arn_template": "arn:${Partition}:dsql:${Region}:${Account}:cluster/${Identifier}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "identifier",
-          "from": "${Identifier}"
+          "arn_template": "arn:${Partition}:dsql:${Region}:${Account}:cluster/${Identifier}",
+          "bindings": [
+            {
+              "key": "identifier",
+              "from": "${Identifier}"
+            }
+          ]
         }
       ]
     },
@@ -760,12 +944,16 @@
       "group": "dynamodb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "dynamodb:backup",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -776,12 +964,16 @@
       "group": "dynamodb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "dynamodb:global-table",
-      "arn_template": "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "globalTableName",
-          "from": "${GlobalTableName}"
+          "arn_template": "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}",
+          "bindings": [
+            {
+              "key": "globalTableName",
+              "from": "${GlobalTableName}"
+            }
+          ]
         }
       ]
     },
@@ -792,12 +984,16 @@
       "group": "dynamodb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "dynamodb:table",
-      "arn_template": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "tableName",
-          "from": "${TableName}"
+          "arn_template": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}",
+          "bindings": [
+            {
+              "key": "tableName",
+              "from": "${TableName}"
+            }
+          ]
         }
       ]
     },
@@ -808,12 +1004,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:capacity-reservation",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation/${CapacityReservationId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "capacityReservationID",
-          "from": "${CapacityReservationId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation/${CapacityReservationId}",
+          "bindings": [
+            {
+              "key": "capacityReservationID",
+              "from": "${CapacityReservationId}"
+            }
+          ]
         }
       ]
     },
@@ -824,12 +1024,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:dhcp-options",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:dhcp-options/${DhcpOptionsId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "dhcpOptionsID",
-          "from": "${DhcpOptionsId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:dhcp-options/${DhcpOptionsId}",
+          "bindings": [
+            {
+              "key": "dhcpOptionsID",
+              "from": "${DhcpOptionsId}"
+            }
+          ]
         }
       ]
     },
@@ -840,12 +1044,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:egress-only-internet-gateway",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:egress-only-internet-gateway/${EgressOnlyInternetGatewayId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${EgressOnlyInternetGatewayId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:egress-only-internet-gateway/${EgressOnlyInternetGatewayId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${EgressOnlyInternetGatewayId}"
+            }
+          ]
         }
       ]
     },
@@ -856,12 +1064,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:elastic-ip",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:elastic-ip/${AllocationId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "allocationID",
-          "from": "${AllocationId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:elastic-ip/${AllocationId}",
+          "bindings": [
+            {
+              "key": "allocationID",
+              "from": "${AllocationId}"
+            }
+          ]
         }
       ]
     },
@@ -872,12 +1084,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:instance",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "instanceID",
-          "from": "${InstanceId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}",
+          "bindings": [
+            {
+              "key": "instanceID",
+              "from": "${InstanceId}"
+            }
+          ]
         }
       ]
     },
@@ -888,12 +1104,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:internet-gateway",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:internet-gateway/${InternetGatewayId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "internetGatewayID",
-          "from": "${InternetGatewayId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:internet-gateway/${InternetGatewayId}",
+          "bindings": [
+            {
+              "key": "internetGatewayID",
+              "from": "${InternetGatewayId}"
+            }
+          ]
         }
       ]
     },
@@ -904,12 +1124,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:launch-template",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:launch-template/${LaunchTemplateId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${LaunchTemplateId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:launch-template/${LaunchTemplateId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${LaunchTemplateId}"
+            }
+          ]
         }
       ]
     },
@@ -920,12 +1144,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:prefix-list",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:prefix-list/${PrefixListId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${PrefixListId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:prefix-list/${PrefixListId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${PrefixListId}"
+            }
+          ]
         }
       ]
     },
@@ -936,12 +1164,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:natgateway",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:natgateway/${NatGatewayId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "natGatewayID",
-          "from": "${NatGatewayId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:natgateway/${NatGatewayId}",
+          "bindings": [
+            {
+              "key": "natGatewayID",
+              "from": "${NatGatewayId}"
+            }
+          ]
         }
       ]
     },
@@ -952,12 +1184,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:network-acl",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:network-acl/${NaclId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${NaclId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:network-acl/${NaclId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${NaclId}"
+            }
+          ]
         }
       ]
     },
@@ -968,12 +1204,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:route-table",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:route-table/${RouteTableId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "routeTableID",
-          "from": "${RouteTableId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:route-table/${RouteTableId}",
+          "bindings": [
+            {
+              "key": "routeTableID",
+              "from": "${RouteTableId}"
+            }
+          ]
         }
       ]
     },
@@ -984,12 +1224,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:security-group",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:security-group/${SecurityGroupId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${SecurityGroupId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:security-group/${SecurityGroupId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${SecurityGroupId}"
+            }
+          ]
         }
       ]
     },
@@ -1000,12 +1244,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:subnet",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:subnet/${SubnetId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "subnetID",
-          "from": "${SubnetId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:subnet/${SubnetId}",
+          "bindings": [
+            {
+              "key": "subnetID",
+              "from": "${SubnetId}"
+            }
+          ]
         }
       ]
     },
@@ -1016,12 +1264,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:transit-gateway",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway/${TransitGatewayId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "transitGatewayID",
-          "from": "${TransitGatewayId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway/${TransitGatewayId}",
+          "bindings": [
+            {
+              "key": "transitGatewayID",
+              "from": "${TransitGatewayId}"
+            }
+          ]
         }
       ]
     },
@@ -1032,12 +1284,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:vpc",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "vpcID",
-          "from": "${VpcId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}",
+          "bindings": [
+            {
+              "key": "vpcID",
+              "from": "${VpcId}"
+            }
+          ]
         }
       ]
     },
@@ -1048,12 +1304,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:vpc-endpoint",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpcEndpointId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "vpcEndpointID",
-          "from": "${VpcEndpointId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpcEndpointId}",
+          "bindings": [
+            {
+              "key": "vpcEndpointID",
+              "from": "${VpcEndpointId}"
+            }
+          ]
         }
       ]
     },
@@ -1064,12 +1324,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:vpc-endpoint-service",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${ServiceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "serviceID",
-          "from": "${ServiceId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${ServiceId}",
+          "bindings": [
+            {
+              "key": "serviceID",
+              "from": "${ServiceId}"
+            }
+          ]
         }
       ]
     },
@@ -1080,12 +1344,16 @@
       "group": "ec2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ec2:vpc-peering-connection",
-      "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc-peering-connection/${VpcPeeringConnectionId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "vpcPeeringConnectionID",
-          "from": "${VpcPeeringConnectionId}"
+          "arn_template": "arn:${Partition}:ec2:${Region}:${Account}:vpc-peering-connection/${VpcPeeringConnectionId}",
+          "bindings": [
+            {
+              "key": "vpcPeeringConnectionID",
+              "from": "${VpcPeeringConnectionId}"
+            }
+          ]
         }
       ]
     },
@@ -1096,12 +1364,20 @@
       "group": "ecr.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ecr:repository",
-      "arn_template": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${RepositoryName}"
+          "arn_template": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${RepositoryName}"
+            },
+            {
+              "key": "registryID",
+              "from": "${Account}"
+            }
+          ]
         }
       ]
     },
@@ -1112,12 +1388,20 @@
       "group": "ecrpublic.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ecr-public:repository",
-      "arn_template": "arn:${Partition}:ecr-public::${Account}:repository/${RepositoryName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${RepositoryName}"
+          "arn_template": "arn:${Partition}:ecr-public::${Account}:repository/${RepositoryName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${RepositoryName}"
+            },
+            {
+              "key": "registryID",
+              "from": "${Account}"
+            }
+          ]
         }
       ]
     },
@@ -1128,12 +1412,16 @@
       "group": "ecs.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ecs:capacity-provider",
-      "arn_template": "arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${CapacityProviderName}"
+          "arn_template": "arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${CapacityProviderName}"
+            }
+          ]
         }
       ]
     },
@@ -1144,12 +1432,16 @@
       "group": "ecs.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ecs:cluster",
-      "arn_template": "arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ClusterName}"
+          "arn_template": "arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ClusterName}"
+            }
+          ]
         }
       ]
     },
@@ -1160,12 +1452,16 @@
       "group": "ecs.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ecs:task-definition",
-      "arn_template": "arn:${Partition}:ecs:${Region}:${Account}:task-definition/${Family}:${Revision}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "family",
-          "from": "${Family}"
+          "arn_template": "arn:${Partition}:ecs:${Region}:${Account}:task-definition/${Family}:${Revision}",
+          "bindings": [
+            {
+              "key": "family",
+              "from": "${Family}"
+            }
+          ]
         }
       ]
     },
@@ -1176,12 +1472,16 @@
       "group": "efs.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticfilesystem:access-point",
-      "arn_template": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "accessPointID",
-          "from": "${AccessPointId}"
+          "arn_template": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}",
+          "bindings": [
+            {
+              "key": "accessPointID",
+              "from": "${AccessPointId}"
+            }
+          ]
         }
       ]
     },
@@ -1192,12 +1492,16 @@
       "group": "efs.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticfilesystem:file-system",
-      "arn_template": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "fileSystemID",
-          "from": "${FileSystemId}"
+          "arn_template": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}",
+          "bindings": [
+            {
+              "key": "fileSystemID",
+              "from": "${FileSystemId}"
+            }
+          ]
         }
       ]
     },
@@ -1208,16 +1512,20 @@
       "group": "eks.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "eks:addon",
-      "arn_template": "arn:${Partition}:eks:${Region}:${Account}:addon/${ClusterName}/${AddonName}/${UUID}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${AddonName}"
-        },
-        {
-          "key": "clusterName",
-          "from": "${ClusterName}"
+          "arn_template": "arn:${Partition}:eks:${Region}:${Account}:addon/${ClusterName}/${AddonName}/${UUID}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${AddonName}"
+            },
+            {
+              "key": "clusterName",
+              "from": "${ClusterName}"
+            }
+          ]
         }
       ]
     },
@@ -1228,16 +1536,20 @@
       "group": "eks.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "eks:capability",
-      "arn_template": "arn:${Partition}:eks:${Region}:${Account}:capability/${ClusterName}/${CapabilityType}/${CapabilityName}/${UUID}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${CapabilityName}"
-        },
-        {
-          "key": "clusterName",
-          "from": "${ClusterName}"
+          "arn_template": "arn:${Partition}:eks:${Region}:${Account}:capability/${ClusterName}/${CapabilityType}/${CapabilityName}/${UUID}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${CapabilityName}"
+            },
+            {
+              "key": "clusterName",
+              "from": "${ClusterName}"
+            }
+          ]
         }
       ]
     },
@@ -1248,12 +1560,16 @@
       "group": "eks.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "eks:cluster",
-      "arn_template": "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ClusterName}"
+          "arn_template": "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ClusterName}"
+            }
+          ]
         }
       ]
     },
@@ -1264,16 +1580,20 @@
       "group": "eks.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "eks:fargateprofile",
-      "arn_template": "arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "clusterName",
-          "from": "${ClusterName}"
-        },
-        {
-          "key": "name",
-          "from": "${FargateProfileName}"
+          "arn_template": "arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}",
+          "bindings": [
+            {
+              "key": "clusterName",
+              "from": "${ClusterName}"
+            },
+            {
+              "key": "name",
+              "from": "${FargateProfileName}"
+            }
+          ]
         }
       ]
     },
@@ -1284,16 +1604,20 @@
       "group": "eks.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "eks:identityproviderconfig",
-      "arn_template": "arn:${Partition}:eks:${Region}:${Account}:identityproviderconfig/${ClusterName}/${IdentityProviderType}/${IdentityProviderConfigName}/${UUID}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "clusterName",
-          "from": "${ClusterName}"
-        },
-        {
-          "key": "identityProviderConfigName",
-          "from": "${IdentityProviderConfigName}"
+          "arn_template": "arn:${Partition}:eks:${Region}:${Account}:identityproviderconfig/${ClusterName}/${IdentityProviderType}/${IdentityProviderConfigName}/${UUID}",
+          "bindings": [
+            {
+              "key": "clusterName",
+              "from": "${ClusterName}"
+            },
+            {
+              "key": "identityProviderConfigName",
+              "from": "${IdentityProviderConfigName}"
+            }
+          ]
         }
       ]
     },
@@ -1304,16 +1628,20 @@
       "group": "eks.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "eks:nodegroup",
-      "arn_template": "arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "clusterName",
-          "from": "${ClusterName}"
-        },
-        {
-          "key": "name",
-          "from": "${NodegroupName}"
+          "arn_template": "arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}",
+          "bindings": [
+            {
+              "key": "clusterName",
+              "from": "${ClusterName}"
+            },
+            {
+              "key": "name",
+              "from": "${NodegroupName}"
+            }
+          ]
         }
       ]
     },
@@ -1324,12 +1652,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:cluster",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:cluster:${CacheClusterId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "cacheClusterID",
-          "from": "${CacheClusterId}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:cluster:${CacheClusterId}",
+          "bindings": [
+            {
+              "key": "cacheClusterID",
+              "from": "${CacheClusterId}"
+            }
+          ]
         }
       ]
     },
@@ -1340,12 +1672,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:parametergroup",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:parametergroup:${CacheParameterGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "cacheParameterGroupName",
-          "from": "${CacheParameterGroupName}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:parametergroup:${CacheParameterGroupName}",
+          "bindings": [
+            {
+              "key": "cacheParameterGroupName",
+              "from": "${CacheParameterGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -1356,12 +1692,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:subnetgroup",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:subnetgroup:${CacheSubnetGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "cacheSubnetGroupName",
-          "from": "${CacheSubnetGroupName}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:subnetgroup:${CacheSubnetGroupName}",
+          "bindings": [
+            {
+              "key": "cacheSubnetGroupName",
+              "from": "${CacheSubnetGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -1372,12 +1712,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:replicationgroup",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:replicationgroup:${ReplicationGroupId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "replicationGroupID",
-          "from": "${ReplicationGroupId}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:replicationgroup:${ReplicationGroupId}",
+          "bindings": [
+            {
+              "key": "replicationGroupID",
+              "from": "${ReplicationGroupId}"
+            }
+          ]
         }
       ]
     },
@@ -1388,12 +1732,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:serverlesscache",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscache:${ServerlessCacheName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "serverlessCacheName",
-          "from": "${ServerlessCacheName}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscache:${ServerlessCacheName}",
+          "bindings": [
+            {
+              "key": "serverlessCacheName",
+              "from": "${ServerlessCacheName}"
+            }
+          ]
         }
       ]
     },
@@ -1404,12 +1752,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:serverlesscachesnapshot",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscachesnapshot:${ServerlessCacheSnapshotName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "serverlessCacheSnapshotName",
-          "from": "${ServerlessCacheSnapshotName}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscachesnapshot:${ServerlessCacheSnapshotName}",
+          "bindings": [
+            {
+              "key": "serverlessCacheSnapshotName",
+              "from": "${ServerlessCacheSnapshotName}"
+            }
+          ]
         }
       ]
     },
@@ -1420,12 +1772,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:snapshot",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:snapshot:${SnapshotName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "snapshotName",
-          "from": "${SnapshotName}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:snapshot:${SnapshotName}",
+          "bindings": [
+            {
+              "key": "snapshotName",
+              "from": "${SnapshotName}"
+            }
+          ]
         }
       ]
     },
@@ -1436,12 +1792,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:user",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "userID",
-          "from": "${UserId}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}",
+          "bindings": [
+            {
+              "key": "userID",
+              "from": "${UserId}"
+            }
+          ]
         }
       ]
     },
@@ -1452,12 +1812,16 @@
       "group": "elasticache.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticache:usergroup",
-      "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "userGroupID",
-          "from": "${UserGroupId}"
+          "arn_template": "arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}",
+          "bindings": [
+            {
+              "key": "userGroupID",
+              "from": "${UserGroupId}"
+            }
+          ]
         }
       ]
     },
@@ -1468,12 +1832,34 @@
       "group": "elbv2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticloadbalancing:loadbalancer",
-      "arn_template": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${LoadBalancerName}"
+          "arn_template": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${LoadBalancerName}"
+            }
+          ]
+        },
+        {
+          "arn_template": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${LoadBalancerName}"
+            }
+          ]
+        },
+        {
+          "arn_template": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/gwy/${LoadBalancerName}/${LoadBalancerId}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${LoadBalancerName}"
+            }
+          ]
         }
       ]
     },
@@ -1484,12 +1870,16 @@
       "group": "elbv2.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "elasticloadbalancing:targetgroup",
-      "arn_template": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${TargetGroupName}"
+          "arn_template": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${TargetGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -1500,16 +1890,20 @@
       "group": "emrcontainers.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "emr-containers:jobrun",
-      "arn_template": "arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/jobruns/${JobRunId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${JobRunId}"
-        },
-        {
-          "key": "virtualClusterID",
-          "from": "${VirtualClusterId}"
+          "arn_template": "arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}/jobruns/${JobRunId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${JobRunId}"
+            },
+            {
+              "key": "virtualClusterID",
+              "from": "${VirtualClusterId}"
+            }
+          ]
         }
       ]
     },
@@ -1520,12 +1914,16 @@
       "group": "emrcontainers.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "emr-containers:virtualcluster",
-      "arn_template": "arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${VirtualClusterId}"
+          "arn_template": "arn:${Partition}:emr-containers:${Region}:${Account}:/virtualclusters/${VirtualClusterId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${VirtualClusterId}"
+            }
+          ]
         }
       ]
     },
@@ -1536,12 +1934,16 @@
       "group": "eventbridge.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "events:endpoint",
-      "arn_template": "arn:${Partition}:events:${Region}:${Account}:endpoint/${EndpointName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${EndpointName}"
+          "arn_template": "arn:${Partition}:events:${Region}:${Account}:endpoint/${EndpointName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${EndpointName}"
+            }
+          ]
         }
       ]
     },
@@ -1552,12 +1954,16 @@
       "group": "eventbridge.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "events:event-bus",
-      "arn_template": "arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${EventBusName}"
+          "arn_template": "arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${EventBusName}"
+            }
+          ]
         }
       ]
     },
@@ -1568,12 +1974,29 @@
       "group": "eventbridge.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "events:rule",
-      "arn_template": "arn:${Partition}:events:${Region}:${Account}:rule/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${Name}"
+          "arn_template": "arn:${Partition}:events:${Region}:${Account}:rule/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            }
+          ]
+        },
+        {
+          "arn_template": "arn:${Partition}:events:${Region}:${Account}:rule/${EventBusName}/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            },
+            {
+              "key": "eventBusName",
+              "from": "${EventBusName}"
+            }
+          ]
         }
       ]
     },
@@ -1584,12 +2007,16 @@
       "group": "firehose.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "firehose:deliverystream",
-      "arn_template": "arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "deliveryStreamName",
-          "from": "${DeliveryStreamName}"
+          "arn_template": "arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}",
+          "bindings": [
+            {
+              "key": "deliveryStreamName",
+              "from": "${DeliveryStreamName}"
+            }
+          ]
         }
       ]
     },
@@ -1600,12 +2027,16 @@
       "group": "glue.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "glue:job",
-      "arn_template": "arn:${Partition}:glue:${Region}:${Account}:job/${JobName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${JobName}"
+          "arn_template": "arn:${Partition}:glue:${Region}:${Account}:job/${JobName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${JobName}"
+            }
+          ]
         }
       ]
     },
@@ -1616,12 +2047,16 @@
       "group": "iam.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "iam:policy",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -1632,12 +2067,16 @@
       "group": "kafka.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "kafka:cluster",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -1648,12 +2087,16 @@
       "group": "kafka.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "kafka:configuration",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -1664,12 +2107,16 @@
       "group": "kafka.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "kafka:vpc-connection",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -1680,12 +2127,16 @@
       "group": "keyspaces.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cassandra:keyspace",
-      "arn_template": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "keyspaceName",
-          "from": "${KeyspaceName}"
+          "arn_template": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/",
+          "bindings": [
+            {
+              "key": "keyspaceName",
+              "from": "${KeyspaceName}"
+            }
+          ]
         }
       ]
     },
@@ -1696,16 +2147,20 @@
       "group": "keyspaces.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "cassandra:table",
-      "arn_template": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "keyspaceName",
-          "from": "${KeyspaceName}"
-        },
-        {
-          "key": "tableName",
-          "from": "${TableName}"
+          "arn_template": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}",
+          "bindings": [
+            {
+              "key": "keyspaceName",
+              "from": "${KeyspaceName}"
+            },
+            {
+              "key": "tableName",
+              "from": "${TableName}"
+            }
+          ]
         }
       ]
     },
@@ -1716,12 +2171,16 @@
       "group": "kinesis.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "kinesis:stream",
-      "arn_template": "arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${StreamName}"
+          "arn_template": "arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${StreamName}"
+            }
+          ]
         }
       ]
     },
@@ -1732,12 +2191,16 @@
       "group": "kms.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "kms:key",
-      "arn_template": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "keyID",
-          "from": "${KeyId}"
+          "arn_template": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
+          "bindings": [
+            {
+              "key": "keyID",
+              "from": "${KeyId}"
+            }
+          ]
         }
       ]
     },
@@ -1748,12 +2211,16 @@
       "group": "lambda.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "lambda:code-signing-config",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -1764,12 +2231,16 @@
       "group": "lambda.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "lambda:event-source-mapping",
-      "arn_template": "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "uuid",
-          "from": "${UUID}"
+          "arn_template": "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}",
+          "bindings": [
+            {
+              "key": "uuid",
+              "from": "${UUID}"
+            }
+          ]
         }
       ]
     },
@@ -1780,12 +2251,16 @@
       "group": "lambda.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "lambda:function",
-      "arn_template": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${FunctionName}"
+          "arn_template": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${FunctionName}"
+            }
+          ]
         }
       ]
     },
@@ -1796,12 +2271,16 @@
       "group": "lambda.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "lambda:layerversion",
-      "arn_template": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "layerName",
-          "from": "${LayerName}"
+          "arn_template": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}",
+          "bindings": [
+            {
+              "key": "layerName",
+              "from": "${LayerName}"
+            }
+          ]
         }
       ]
     },
@@ -1812,12 +2291,16 @@
       "group": "memorydb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "memorydb:acl",
-      "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:acl/${AclName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${AclName}"
+          "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:acl/${AclName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${AclName}"
+            }
+          ]
         }
       ]
     },
@@ -1828,12 +2311,16 @@
       "group": "memorydb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "memorydb:cluster",
-      "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:cluster/${ClusterName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ClusterName}"
+          "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:cluster/${ClusterName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ClusterName}"
+            }
+          ]
         }
       ]
     },
@@ -1844,12 +2331,16 @@
       "group": "memorydb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "memorydb:parametergroup",
-      "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:parametergroup/${ParameterGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ParameterGroupName}"
+          "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:parametergroup/${ParameterGroupName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ParameterGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -1860,12 +2351,16 @@
       "group": "memorydb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "memorydb:snapshot",
-      "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:snapshot/${SnapshotName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${SnapshotName}"
+          "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:snapshot/${SnapshotName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${SnapshotName}"
+            }
+          ]
         }
       ]
     },
@@ -1876,12 +2371,16 @@
       "group": "memorydb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "memorydb:subnetgroup",
-      "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:subnetgroup/${SubnetGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${SubnetGroupName}"
+          "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:subnetgroup/${SubnetGroupName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${SubnetGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -1892,12 +2391,16 @@
       "group": "memorydb.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "memorydb:user",
-      "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:user/${UserName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${UserName}"
+          "arn_template": "arn:${Partition}:memorydb:${Region}:${Account}:user/${UserName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${UserName}"
+            }
+          ]
         }
       ]
     },
@@ -1908,12 +2411,16 @@
       "group": "mq.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "mq:broker",
-      "arn_template": "arn:${Partition}:mq:${Region}:${Account}:broker:${BrokerName}:${BrokerId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "brokerID",
-          "from": "${BrokerId}"
+          "arn_template": "arn:${Partition}:mq:${Region}:${Account}:broker:${BrokerName}:${BrokerId}",
+          "bindings": [
+            {
+              "key": "brokerID",
+              "from": "${BrokerId}"
+            }
+          ]
         }
       ]
     },
@@ -1924,12 +2431,16 @@
       "group": "mwaa.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "airflow:environment",
-      "arn_template": "arn:${Partition}:airflow:${Region}:${Account}:environment/${EnvironmentName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${EnvironmentName}"
+          "arn_template": "arn:${Partition}:airflow:${Region}:${Account}:environment/${EnvironmentName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${EnvironmentName}"
+            }
+          ]
         }
       ]
     },
@@ -1940,12 +2451,16 @@
       "group": "networkfirewall.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "network-firewall:firewall",
-      "arn_template": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "firewallName",
-          "from": "${Name}"
+          "arn_template": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall/${Name}",
+          "bindings": [
+            {
+              "key": "firewallName",
+              "from": "${Name}"
+            }
+          ]
         }
       ]
     },
@@ -1956,12 +2471,16 @@
       "group": "networkfirewall.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "network-firewall:firewall-policy",
-      "arn_template": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "firewallPolicyName",
-          "from": "${Name}"
+          "arn_template": "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy/${Name}",
+          "bindings": [
+            {
+              "key": "firewallPolicyName",
+              "from": "${Name}"
+            }
+          ]
         }
       ]
     },
@@ -1972,12 +2491,16 @@
       "group": "opensearchserverless.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "aoss:collection",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -1988,12 +2511,16 @@
       "group": "opensearchservice.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "es:domain",
-      "arn_template": "arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${DomainName}"
+          "arn_template": "arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${DomainName}"
+            }
+          ]
         }
       ]
     },
@@ -2004,12 +2531,16 @@
       "group": "organizations.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "organizations:account",
-      "arn_template": "arn:${Partition}:organizations::${Account}:account/o-${OrganizationId}/${AccountId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "accountID",
-          "from": "${AccountId}"
+          "arn_template": "arn:${Partition}:organizations::${Account}:account/o-${OrganizationId}/${AccountId}",
+          "bindings": [
+            {
+              "key": "accountID",
+              "from": "${AccountId}"
+            }
+          ]
         }
       ]
     },
@@ -2020,12 +2551,16 @@
       "group": "organizations.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "organizations:organizationalunit",
-      "arn_template": "arn:${Partition}:organizations::${Account}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "ou-${OrganizationalUnitId}"
+          "arn_template": "arn:${Partition}:organizations::${Account}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "ou-${OrganizationalUnitId}"
+            }
+          ]
         }
       ]
     },
@@ -2036,12 +2571,16 @@
       "group": "pipes.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "pipes:pipe",
-      "arn_template": "arn:${Partition}:pipes:${Region}:${Account}:pipe/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${Name}"
+          "arn_template": "arn:${Partition}:pipes:${Region}:${Account}:pipe/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            }
+          ]
         }
       ]
     },
@@ -2052,16 +2591,20 @@
       "group": "prometheusservice.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "aps:rulegroupsnamespace",
-      "arn_template": "arn:${Partition}:aps:${Region}:${Account}:rulegroupsnamespace/${WorkspaceId}/${Name}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${Name}"
-        },
-        {
-          "key": "workspaceID",
-          "from": "${WorkspaceId}"
+          "arn_template": "arn:${Partition}:aps:${Region}:${Account}:rulegroupsnamespace/${WorkspaceId}/${Name}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${Name}"
+            },
+            {
+              "key": "workspaceID",
+              "from": "${WorkspaceId}"
+            }
+          ]
         }
       ]
     },
@@ -2072,12 +2615,16 @@
       "group": "prometheusservice.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "aps:workspace",
-      "arn_template": "arn:${Partition}:aps:${Region}:${Account}:workspace/${WorkspaceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "workspaceID",
-          "from": "${WorkspaceId}"
+          "arn_template": "arn:${Partition}:aps:${Region}:${Account}:workspace/${WorkspaceId}",
+          "bindings": [
+            {
+              "key": "workspaceID",
+              "from": "${WorkspaceId}"
+            }
+          ]
         }
       ]
     },
@@ -2088,16 +2635,20 @@
       "group": "quicksight.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "quicksight:analysis",
-      "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:analysis/${ResourceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ResourceId}"
-        },
-        {
-          "key": "awsAccountID",
-          "from": "${Account}"
+          "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:analysis/${ResourceId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ResourceId}"
+            },
+            {
+              "key": "awsAccountID",
+              "from": "${Account}"
+            }
+          ]
         }
       ]
     },
@@ -2108,16 +2659,20 @@
       "group": "quicksight.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "quicksight:dashboard",
-      "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ResourceId}"
-        },
-        {
-          "key": "awsAccountID",
-          "from": "${Account}"
+          "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ResourceId}"
+            },
+            {
+              "key": "awsAccountID",
+              "from": "${Account}"
+            }
+          ]
         }
       ]
     },
@@ -2128,16 +2683,20 @@
       "group": "quicksight.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "quicksight:dataset",
-      "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${ResourceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ResourceId}"
-        },
-        {
-          "key": "awsAccountID",
-          "from": "${Account}"
+          "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${ResourceId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ResourceId}"
+            },
+            {
+              "key": "awsAccountID",
+              "from": "${Account}"
+            }
+          ]
         }
       ]
     },
@@ -2148,16 +2707,20 @@
       "group": "quicksight.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "quicksight:datasource",
-      "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:datasource/${ResourceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ResourceId}"
-        },
-        {
-          "key": "awsAccountID",
-          "from": "${Account}"
+          "arn_template": "arn:${Partition}:quicksight:${Region}:${Account}:datasource/${ResourceId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ResourceId}"
+            },
+            {
+              "key": "awsAccountID",
+              "from": "${Account}"
+            }
+          ]
         }
       ]
     },
@@ -2168,12 +2731,16 @@
       "group": "ram.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ram:permission",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -2184,12 +2751,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:cluster",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterIdentifier}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "dbClusterIdentifier",
-          "from": "${DbClusterIdentifier}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterIdentifier}",
+          "bindings": [
+            {
+              "key": "dbClusterIdentifier",
+              "from": "${DbClusterIdentifier}"
+            }
+          ]
         }
       ]
     },
@@ -2200,12 +2771,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:cluster-endpoint",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpointIdentifier}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "dbClusterEndpointIdentifier",
-          "from": "${DbClusterEndpointIdentifier}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpointIdentifier}",
+          "bindings": [
+            {
+              "key": "dbClusterEndpointIdentifier",
+              "from": "${DbClusterEndpointIdentifier}"
+            }
+          ]
         }
       ]
     },
@@ -2216,12 +2791,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:cluster-pg",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ClusterParameterGroupName}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ClusterParameterGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -2232,12 +2811,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:cluster-snapshot",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${DbClusterSnapshotIdentifier}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "dbClusterSnapshotIdentifier",
-          "from": "${DbClusterSnapshotIdentifier}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${DbClusterSnapshotIdentifier}",
+          "bindings": [
+            {
+              "key": "dbClusterSnapshotIdentifier",
+              "from": "${DbClusterSnapshotIdentifier}"
+            }
+          ]
         }
       ]
     },
@@ -2248,12 +2831,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:db",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "dbInstanceIdentifier",
-          "from": "${DbInstanceName}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}",
+          "bindings": [
+            {
+              "key": "dbInstanceIdentifier",
+              "from": "${DbInstanceName}"
+            }
+          ]
         }
       ]
     },
@@ -2264,12 +2851,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:pg",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ParameterGroupName}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ParameterGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -2280,12 +2871,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:snapshot",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:snapshot:${DbSnapshotIdentifier}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "dbSnapshotIdentifier",
-          "from": "${DbSnapshotIdentifier}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:snapshot:${DbSnapshotIdentifier}",
+          "bindings": [
+            {
+              "key": "dbSnapshotIdentifier",
+              "from": "${DbSnapshotIdentifier}"
+            }
+          ]
         }
       ]
     },
@@ -2296,12 +2891,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:subgrp",
-      "arn_template": "arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${SubnetGroupName}"
+          "arn_template": "arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${SubnetGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -2312,12 +2911,16 @@
       "group": "rds.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rds:global-cluster",
-      "arn_template": "arn:${Partition}:rds::${Account}:global-cluster:${GlobalClusterIdentifier}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "globalClusterIdentifier",
-          "from": "${GlobalClusterIdentifier}"
+          "arn_template": "arn:${Partition}:rds::${Account}:global-cluster:${GlobalClusterIdentifier}",
+          "bindings": [
+            {
+              "key": "globalClusterIdentifier",
+              "from": "${GlobalClusterIdentifier}"
+            }
+          ]
         }
       ]
     },
@@ -2328,12 +2931,16 @@
       "group": "recyclebin.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "rbin:rule",
-      "arn_template": "arn:${Partition}:rbin:${Region}:${Account}:rule/${ResourceName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "identifier",
-          "from": "${ResourceName}"
+          "arn_template": "arn:${Partition}:rbin:${Region}:${Account}:rule/${ResourceName}",
+          "bindings": [
+            {
+              "key": "identifier",
+              "from": "${ResourceName}"
+            }
+          ]
         }
       ]
     },
@@ -2344,12 +2951,16 @@
       "group": "route53.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "route53:healthcheck",
-      "arn_template": "arn:${Partition}:route53:::healthcheck/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:route53:::healthcheck/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -2360,12 +2971,16 @@
       "group": "route53.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "route53:hostedzone",
-      "arn_template": "arn:${Partition}:route53:::hostedzone/${Id}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${Id}"
+          "arn_template": "arn:${Partition}:route53:::hostedzone/${Id}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${Id}"
+            }
+          ]
         }
       ]
     },
@@ -2376,12 +2991,16 @@
       "group": "route53resolver.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "route53resolver:resolver-endpoint",
-      "arn_template": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ResourceId}"
+          "arn_template": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ResourceId}"
+            }
+          ]
         }
       ]
     },
@@ -2392,12 +3011,16 @@
       "group": "route53resolver.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "route53resolver:resolver-query-log-config",
-      "arn_template": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-query-log-config/${ResourceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ResourceId}"
+          "arn_template": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-query-log-config/${ResourceId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ResourceId}"
+            }
+          ]
         }
       ]
     },
@@ -2408,12 +3031,16 @@
       "group": "route53resolver.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "route53resolver:resolver-rule",
-      "arn_template": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${ResourceId}"
+          "arn_template": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${ResourceId}"
+            }
+          ]
         }
       ]
     },
@@ -2424,12 +3051,16 @@
       "group": "s3.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "s3:bucket",
-      "arn_template": "arn:${Partition}:s3:::${BucketName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${BucketName}"
+          "arn_template": "arn:${Partition}:s3:::${BucketName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${BucketName}"
+            }
+          ]
         }
       ]
     },
@@ -2440,16 +3071,20 @@
       "group": "s3control.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "s3:accesspoint",
-      "arn_template": "arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "accountID",
-          "from": "${Account}"
-        },
-        {
-          "key": "name",
-          "from": "${AccessPointName}"
+          "arn_template": "arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}",
+          "bindings": [
+            {
+              "key": "accountID",
+              "from": "${Account}"
+            },
+            {
+              "key": "name",
+              "from": "${AccessPointName}"
+            }
+          ]
         }
       ]
     },
@@ -2460,12 +3095,16 @@
       "group": "s3files.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "s3files:access-point",
-      "arn_template": "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}/access-point/${AccessPointId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "id",
-          "from": "${AccessPointId}"
+          "arn_template": "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}/access-point/${AccessPointId}",
+          "bindings": [
+            {
+              "key": "id",
+              "from": "${AccessPointId}"
+            }
+          ]
         }
       ]
     },
@@ -2476,12 +3115,16 @@
       "group": "s3files.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "s3files:file-system",
-      "arn_template": "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "fileSystemID",
-          "from": "${FileSystemId}"
+          "arn_template": "arn:${Partition}:s3files:${Region}:${Account}:file-system/${FileSystemId}",
+          "bindings": [
+            {
+              "key": "fileSystemID",
+              "from": "${FileSystemId}"
+            }
+          ]
         }
       ]
     },
@@ -2492,12 +3135,16 @@
       "group": "s3tables.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "s3tables:tablebucket",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -2508,12 +3155,16 @@
       "group": "s3vectors.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "s3vectors:index",
-      "arn_template": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}/index/${IndexName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${IndexName}"
+          "arn_template": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}/index/${IndexName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${IndexName}"
+            }
+          ]
         }
       ]
     },
@@ -2524,36 +3175,16 @@
       "group": "s3vectors.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "s3vectors:vectorbucket",
-      "arn_template": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${BucketName}"
-        }
-      ]
-    },
-    {
-      "service": "sagemaker",
-      "resource_dir": "app",
-      "kind": "App",
-      "group": "sagemaker.services.k8s.aws",
-      "version": "v1alpha1",
-      "resource_type_filter": "sagemaker:app",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:app/${DomainId}/${UserProfileName}/${AppType}/${AppName}",
-      "arn_primary": false,
-      "bindings": [
-        {
-          "key": "appName",
-          "from": "${AppName}"
-        },
-        {
-          "key": "appType",
-          "from": "${AppType}"
-        },
-        {
-          "key": "domainID",
-          "from": "${DomainId}"
+          "arn_template": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${BucketName}"
+            }
+          ]
         }
       ]
     },
@@ -2564,12 +3195,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:data-quality-job-definition",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:data-quality-job-definition/${DataQualityJobDefinitionName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "jobDefinitionName",
-          "from": "${DataQualityJobDefinitionName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:data-quality-job-definition/${DataQualityJobDefinitionName}",
+          "bindings": [
+            {
+              "key": "jobDefinitionName",
+              "from": "${DataQualityJobDefinitionName}"
+            }
+          ]
         }
       ]
     },
@@ -2580,12 +3215,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:domain",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "domainID",
-          "from": "${DomainId}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}",
+          "bindings": [
+            {
+              "key": "domainID",
+              "from": "${DomainId}"
+            }
+          ]
         }
       ]
     },
@@ -2596,12 +3235,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:endpoint",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "endpointName",
-          "from": "${EndpointName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}",
+          "bindings": [
+            {
+              "key": "endpointName",
+              "from": "${EndpointName}"
+            }
+          ]
         }
       ]
     },
@@ -2612,12 +3255,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:endpoint-config",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "endpointConfigName",
-          "from": "${EndpointConfigName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}",
+          "bindings": [
+            {
+              "key": "endpointConfigName",
+              "from": "${EndpointConfigName}"
+            }
+          ]
         }
       ]
     },
@@ -2628,12 +3275,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:feature-group",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:feature-group/${FeatureGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "featureGroupName",
-          "from": "${FeatureGroupName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:feature-group/${FeatureGroupName}",
+          "bindings": [
+            {
+              "key": "featureGroupName",
+              "from": "${FeatureGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -2644,12 +3295,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:hyper-parameter-tuning-job",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "hyperParameterTuningJobName",
-          "from": "${HyperParameterTuningJobName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}",
+          "bindings": [
+            {
+              "key": "hyperParameterTuningJobName",
+              "from": "${HyperParameterTuningJobName}"
+            }
+          ]
         }
       ]
     },
@@ -2660,12 +3315,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:inference-component",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:inference-component/${InferenceComponentName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "inferenceComponentName",
-          "from": "${InferenceComponentName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:inference-component/${InferenceComponentName}",
+          "bindings": [
+            {
+              "key": "inferenceComponentName",
+              "from": "${InferenceComponentName}"
+            }
+          ]
         }
       ]
     },
@@ -2676,12 +3335,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:labeling-job",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "labelingJobName",
-          "from": "${LabelingJobName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}",
+          "bindings": [
+            {
+              "key": "labelingJobName",
+              "from": "${LabelingJobName}"
+            }
+          ]
         }
       ]
     },
@@ -2692,12 +3355,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:model",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "modelName",
-          "from": "${ModelName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}",
+          "bindings": [
+            {
+              "key": "modelName",
+              "from": "${ModelName}"
+            }
+          ]
         }
       ]
     },
@@ -2708,12 +3375,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:model-bias-job-definition",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-bias-job-definition/${ModelBiasJobDefinitionName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "jobDefinitionName",
-          "from": "${ModelBiasJobDefinitionName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-bias-job-definition/${ModelBiasJobDefinitionName}",
+          "bindings": [
+            {
+              "key": "jobDefinitionName",
+              "from": "${ModelBiasJobDefinitionName}"
+            }
+          ]
         }
       ]
     },
@@ -2724,12 +3395,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:model-explainability-job-definition",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-explainability-job-definition/${ModelExplainabilityJobDefinitionName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "jobDefinitionName",
-          "from": "${ModelExplainabilityJobDefinitionName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-explainability-job-definition/${ModelExplainabilityJobDefinitionName}",
+          "bindings": [
+            {
+              "key": "jobDefinitionName",
+              "from": "${ModelExplainabilityJobDefinitionName}"
+            }
+          ]
         }
       ]
     },
@@ -2740,12 +3415,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:model-package",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -2756,12 +3435,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:model-package-group",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-package-group/${ModelPackageGroupName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "modelPackageGroupName",
-          "from": "${ModelPackageGroupName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-package-group/${ModelPackageGroupName}",
+          "bindings": [
+            {
+              "key": "modelPackageGroupName",
+              "from": "${ModelPackageGroupName}"
+            }
+          ]
         }
       ]
     },
@@ -2772,12 +3455,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:model-quality-job-definition",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-quality-job-definition/${ModelQualityJobDefinitionName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "jobDefinitionName",
-          "from": "${ModelQualityJobDefinitionName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:model-quality-job-definition/${ModelQualityJobDefinitionName}",
+          "bindings": [
+            {
+              "key": "jobDefinitionName",
+              "from": "${ModelQualityJobDefinitionName}"
+            }
+          ]
         }
       ]
     },
@@ -2788,12 +3475,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:monitoring-schedule",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "monitoringScheduleName",
-          "from": "${MonitoringScheduleName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}",
+          "bindings": [
+            {
+              "key": "monitoringScheduleName",
+              "from": "${MonitoringScheduleName}"
+            }
+          ]
         }
       ]
     },
@@ -2804,12 +3495,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:notebook-instance",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "notebookInstanceName",
-          "from": "${NotebookInstanceName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}",
+          "bindings": [
+            {
+              "key": "notebookInstanceName",
+              "from": "${NotebookInstanceName}"
+            }
+          ]
         }
       ]
     },
@@ -2820,12 +3515,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:notebook-instance-lifecycle-config",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance-lifecycle-config/${NotebookInstanceLifecycleConfigName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "notebookInstanceLifecycleConfigName",
-          "from": "${NotebookInstanceLifecycleConfigName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance-lifecycle-config/${NotebookInstanceLifecycleConfigName}",
+          "bindings": [
+            {
+              "key": "notebookInstanceLifecycleConfigName",
+              "from": "${NotebookInstanceLifecycleConfigName}"
+            }
+          ]
         }
       ]
     },
@@ -2836,12 +3535,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:pipeline",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "pipelineName",
-          "from": "${PipelineName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}",
+          "bindings": [
+            {
+              "key": "pipelineName",
+              "from": "${PipelineName}"
+            }
+          ]
         }
       ]
     },
@@ -2852,12 +3555,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:pipeline-execution",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -2868,12 +3575,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:processing-job",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "processingJobName",
-          "from": "${ProcessingJobName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}",
+          "bindings": [
+            {
+              "key": "processingJobName",
+              "from": "${ProcessingJobName}"
+            }
+          ]
         }
       ]
     },
@@ -2884,12 +3595,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:project",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:project/${ProjectName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "projectName",
-          "from": "${ProjectName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:project/${ProjectName}",
+          "bindings": [
+            {
+              "key": "projectName",
+              "from": "${ProjectName}"
+            }
+          ]
         }
       ]
     },
@@ -2900,16 +3615,20 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:space",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:space/${DomainId}/${SpaceName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "domainID",
-          "from": "${DomainId}"
-        },
-        {
-          "key": "spaceName",
-          "from": "${SpaceName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:space/${DomainId}/${SpaceName}",
+          "bindings": [
+            {
+              "key": "domainID",
+              "from": "${DomainId}"
+            },
+            {
+              "key": "spaceName",
+              "from": "${SpaceName}"
+            }
+          ]
         }
       ]
     },
@@ -2920,12 +3639,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:training-job",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "trainingJobName",
-          "from": "${TrainingJobName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}",
+          "bindings": [
+            {
+              "key": "trainingJobName",
+              "from": "${TrainingJobName}"
+            }
+          ]
         }
       ]
     },
@@ -2936,12 +3659,16 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:transform-job",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "transformJobName",
-          "from": "${TransformJobName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}",
+          "bindings": [
+            {
+              "key": "transformJobName",
+              "from": "${TransformJobName}"
+            }
+          ]
         }
       ]
     },
@@ -2952,16 +3679,20 @@
       "group": "sagemaker.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sagemaker:user-profile",
-      "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "domainID",
-          "from": "${DomainId}"
-        },
-        {
-          "key": "userProfileName",
-          "from": "${UserProfileName}"
+          "arn_template": "arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}",
+          "bindings": [
+            {
+              "key": "domainID",
+              "from": "${DomainId}"
+            },
+            {
+              "key": "userProfileName",
+              "from": "${UserProfileName}"
+            }
+          ]
         }
       ]
     },
@@ -2972,12 +3703,16 @@
       "group": "ses.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ses:configuration-set",
-      "arn_template": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ConfigurationSetName}"
+          "arn_template": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ConfigurationSetName}"
+            }
+          ]
         }
       ]
     },
@@ -2988,12 +3723,16 @@
       "group": "sfn.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "states:activity",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -3004,12 +3743,16 @@
       "group": "sfn.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "states:statemachine",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -3020,12 +3763,16 @@
       "group": "sfn.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "states:statemachinealias",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -3036,12 +3783,16 @@
       "group": "sns.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "sns:topic",
-      "arn_template": "\u003carn\u003e",
       "arn_primary": true,
-      "bindings": [
+      "templates": [
         {
-          "key": "arn",
-          "from": "${ARN}"
+          "arn_template": "\u003carn\u003e",
+          "bindings": [
+            {
+              "key": "arn",
+              "from": "${ARN}"
+            }
+          ]
         }
       ]
     },
@@ -3052,12 +3803,16 @@
       "group": "ssm.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ssm:document",
-      "arn_template": "arn:${Partition}:ssm:${Region}:${Account}:document/${DocumentName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${DocumentName}"
+          "arn_template": "arn:${Partition}:ssm:${Region}:${Account}:document/${DocumentName}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${DocumentName}"
+            }
+          ]
         }
       ]
     },
@@ -3068,12 +3823,16 @@
       "group": "ssm.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ssm:parameter",
-      "arn_template": "arn:${Partition}:ssm:${Region}:${Account}:parameter/${ParameterNameWithoutLeadingSlash}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "name",
-          "from": "${ParameterNameWithoutLeadingSlash}"
+          "arn_template": "arn:${Partition}:ssm:${Region}:${Account}:parameter/${ParameterNameWithoutLeadingSlash}",
+          "bindings": [
+            {
+              "key": "name",
+              "from": "${ParameterNameWithoutLeadingSlash}"
+            }
+          ]
         }
       ]
     },
@@ -3084,12 +3843,16 @@
       "group": "ssm.services.k8s.aws",
       "version": "v1alpha1",
       "resource_type_filter": "ssm:resource-data-sync",
-      "arn_template": "arn:${Partition}:ssm:${Region}:${Account}:resource-data-sync/${SyncName}",
       "arn_primary": false,
-      "bindings": [
+      "templates": [
         {
-          "key": "syncName",
-          "from": "${SyncName}"
+          "arn_template": "arn:${Partition}:ssm:${Region}:${Account}:resource-data-sync/${SyncName}",
+          "bindings": [
+            {
+              "key": "syncName",
+              "from": "${SyncName}"
+            }
+          ]
         }
       ]
     }
@@ -3196,6 +3959,16 @@
       "reason": "sub-resource not independently taggable"
     },
     {
+      "resource": "bedrock:inference_profile",
+      "kind": "InferenceProfile",
+      "reason": "no Tagging API type filter (needs override)"
+    },
+    {
+      "resource": "bedrockagent:agent",
+      "kind": "Agent",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
       "resource": "bedrockagentcorecontrol:gateway_target",
       "kind": "GatewayTarget",
       "reason": "no matching resource type in the ARN grammar (needs override)"
@@ -3219,6 +3992,36 @@
       "resource": "cognitoidentityprovider:user_pool_client",
       "kind": "UserPoolClient",
       "reason": "no matching resource type in the ARN grammar (needs override)"
+    },
+    {
+      "resource": "dms:certificate",
+      "kind": "Certificate",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
+      "resource": "dms:endpoint",
+      "kind": "Endpoint",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
+      "resource": "dms:event_subscription",
+      "kind": "EventSubscription",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
+      "resource": "dms:replication_instance",
+      "kind": "ReplicationInstance",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
+      "resource": "dms:replication_subnet_group",
+      "kind": "ReplicationSubnetGroup",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
+      "resource": "dms:replication_task",
+      "kind": "ReplicationTask",
+      "reason": "no published ARN grammar for the service"
     },
     {
       "resource": "documentdb:db_cluster",
@@ -3286,6 +4089,16 @@
       "reason": "no Tagging API type filter (needs override)"
     },
     {
+      "resource": "emr:security_configuration",
+      "kind": "SecurityConfiguration",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
+      "resource": "emrserverless:application",
+      "kind": "Application",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
       "resource": "eventbridge:archive",
       "kind": "Archive",
       "reason": "EventBridge does not support tags on archives, so they cannot be discovered by tag"
@@ -3351,6 +4164,21 @@
       "reason": "the Tagging API returns only unqualified function ARNs, so a version is never discoverable by tag"
     },
     {
+      "resource": "lambdamicrovms:microvm",
+      "kind": "Microvm",
+      "reason": "no published ARN grammar for the service"
+    },
+    {
+      "resource": "lambdamicrovms:microvm_image",
+      "kind": "MicrovmImage",
+      "reason": "no Tagging API type filter (needs override)"
+    },
+    {
+      "resource": "mwaaserverless:workflow",
+      "kind": "Workflow",
+      "reason": "no Tagging API type filter (needs override)"
+    },
+    {
       "resource": "networkfirewall:rule_group",
       "kind": "RuleGroup",
       "reason": "no matching resource type in the ARN grammar (needs override)"
@@ -3414,6 +4242,11 @@
       "resource": "s3tables:table",
       "kind": "Table",
       "reason": "required key not in ARN (needs override/describe)"
+    },
+    {
+      "resource": "sagemaker:app",
+      "kind": "App",
+      "reason": "the ARN does not say whether the parent is a user profile or a space (needs describe)"
     },
     {
       "resource": "secretsmanager:secret",

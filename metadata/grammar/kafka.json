@@ -1,0 +1,53 @@
+{
+  "Name": "kafka",
+  "Resources": [
+    {
+      "Name": "channel",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${Account}:channel/${ClusterName}/${ClusterUuid}/${ChannelName}/${Uuid}"
+      ]
+    },
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${Uuid}"
+      ]
+    },
+    {
+      "Name": "configuration",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${Account}:configuration/${ConfigurationName}/${Uuid}"
+      ]
+    },
+    {
+      "Name": "group",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${Account}:group/${ClusterName}/${ClusterUuid}/${GroupName}"
+      ]
+    },
+    {
+      "Name": "replicator",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${Account}:replicator/${ReplicatorName}/${Uuid}"
+      ]
+    },
+    {
+      "Name": "topic",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${Account}:topic/${ClusterName}/${ClusterUuid}/${TopicName}"
+      ]
+    },
+    {
+      "Name": "transactional-id",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${Account}:transactional-id/${ClusterName}/${ClusterUuid}/${TransactionalId}"
+      ]
+    },
+    {
+      "Name": "vpc-connection",
+      "ARNFormats": [
+        "arn:${Partition}:kafka:${Region}:${VpcOwnerAccount}:vpc-connection/${ClusterOwnerAccount}/${ClusterName}/${Uuid}"
+      ]
+    }
+  ]
+}

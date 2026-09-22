@@ -1,0 +1,47 @@
+{
+  "Name": "dynamodb",
+  "Resources": [
+    {
+      "Name": "backup",
+      "ARNFormats": [
+        "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}"
+      ]
+    },
+    {
+      "Name": "export",
+      "ARNFormats": [
+        "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/export/${ExportName}"
+      ]
+    },
+    {
+      "Name": "global-table",
+      "ARNFormats": [
+        "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}"
+      ]
+    },
+    {
+      "Name": "import",
+      "ARNFormats": [
+        "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/import/${ImportName}"
+      ]
+    },
+    {
+      "Name": "index",
+      "ARNFormats": [
+        "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/index/${IndexName}"
+      ]
+    },
+    {
+      "Name": "stream",
+      "ARNFormats": [
+        "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/stream/${StreamLabel}"
+      ]
+    },
+    {
+      "Name": "table",
+      "ARNFormats": [
+        "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}"
+      ]
+    }
+  ]
+}

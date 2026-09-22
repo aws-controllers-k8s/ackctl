@@ -1,0 +1,95 @@
+{
+  "Name": "iam",
+  "Resources": [
+    {
+      "Name": "access-report",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:access-report/${EntityPath}"
+      ]
+    },
+    {
+      "Name": "assumed-role",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}"
+      ]
+    },
+    {
+      "Name": "delegation-request",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:delegation-request/${DelegationRequestId}"
+      ]
+    },
+    {
+      "Name": "federated-user",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:federated-user/${UserName}"
+      ]
+    },
+    {
+      "Name": "group",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}"
+      ]
+    },
+    {
+      "Name": "instance-profile",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}"
+      ]
+    },
+    {
+      "Name": "mfa",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}"
+      ]
+    },
+    {
+      "Name": "oidc-provider",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}"
+      ]
+    },
+    {
+      "Name": "policy",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}"
+      ]
+    },
+    {
+      "Name": "role",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}"
+      ]
+    },
+    {
+      "Name": "role-template",
+      "ARNFormats": [
+        "arn:${Partition}:iam::aws:role-template/${AWSServicePrincipal}/${RoleTemplateName}:${RoleTemplateMajorVersion}"
+      ]
+    },
+    {
+      "Name": "saml-provider",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}"
+      ]
+    },
+    {
+      "Name": "server-certificate",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}"
+      ]
+    },
+    {
+      "Name": "sms-mfa",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}"
+      ]
+    },
+    {
+      "Name": "user",
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}"
+      ]
+    }
+  ]
+}

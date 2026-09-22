@@ -1,0 +1,409 @@
+{
+  "_comment": "Hand-maintained decisions the catalog generator applies where automatic derivation cannot reach. Maintained by this project; contributors adding a new ACK resource never touch it. Every entry needs a 'why' \u2014 the generator refuses to load one without it, because an override with no stated reason cannot be reviewed or retired. An override only says WHICH ARN template to bind against; keys still bind by the ordinary name-agreement rule, so an override cannot smuggle in a mis-binding.",
+  "resources": {
+    "rds:db_instance": {
+      "why": "The grammar labels this resource type 'db'. No normalization gets from the ACK directory db_instance to that abbreviation.",
+      "resource_type_filter": "rds:db",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}"
+      ]
+    },
+    "rds:db_cluster": {
+      "why": "Label is 'cluster', which does not name-match db_cluster.",
+      "resource_type_filter": "rds:cluster",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterIdentifier}"
+      ]
+    },
+    "rds:db_parameter_group": {
+      "why": "Label is the abbreviation 'pg'.",
+      "resource_type_filter": "rds:pg",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}"
+      ]
+    },
+    "rds:db_cluster_parameter_group": {
+      "why": "Label is the abbreviation 'cluster-pg'.",
+      "resource_type_filter": "rds:cluster-pg",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}"
+      ]
+    },
+    "rds:db_subnet_group": {
+      "why": "Label is the abbreviation 'subgrp'.",
+      "resource_type_filter": "rds:subgrp",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}"
+      ]
+    },
+    "rds:db_snapshot": {
+      "why": "Label is 'snapshot', which does not name-match db_snapshot.",
+      "resource_type_filter": "rds:snapshot",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:snapshot:${DbSnapshotIdentifier}"
+      ]
+    },
+    "rds:db_cluster_snapshot": {
+      "why": "Label is 'cluster-snapshot', which does not name-match db_cluster_snapshot.",
+      "resource_type_filter": "rds:cluster-snapshot",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${DbClusterSnapshotIdentifier}"
+      ]
+    },
+    "rds:db_cluster_endpoint": {
+      "why": "Label is 'cluster-endpoint', which does not name-match db_cluster_endpoint.",
+      "resource_type_filter": "rds:cluster-endpoint",
+      "arn_templates": [
+        "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpointIdentifier}"
+      ]
+    },
+    "rds:global_cluster": {
+      "why": "Label is 'global-cluster'. Note the empty region slot: a global cluster's ARN carries no region, which is exactly why services.k8s.aws/region is written from the query rather than parsed out of the ARN.",
+      "resource_type_filter": "rds:global-cluster",
+      "arn_templates": [
+        "arn:${Partition}:rds::${Account}:global-cluster:${GlobalClusterIdentifier}"
+      ]
+    },
+    "lambda:code_signing_config": {
+      "why": "The grammar names this type 'code signing config', with spaces, taken from its friendly name. Measured: the Tagging API ACCEPTS that filter and silently returns nothing \u2014 it accepts almost any service:type string, rejecting only malformed syntax. So every resource of the kind was undiscoverable with no error to notice, indistinguishable from having none. Hence the hyphenated form.",
+      "resource_type_filter": "lambda:code-signing-config",
+      "arn_templates": [
+        "<arn>"
+      ],
+      "arn_primary": true
+    },
+    "ec2:flow_log": {
+      "why": "Label is 'vpc-flow-log', which does not name-match flow_log. Supplying it makes the real gap visible: the ARN carries only ${FlowLogId} while the controller also requires resourceID and resourceType, so binding still fails and the kind is reported as 'required key not in ARN' rather than the less useful 'no matching resource type'.",
+      "resource_type_filter": "ec2:vpc-flow-log",
+      "arn_templates": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-flow-log/${FlowLogId}"
+      ]
+    },
+    "ec2:elastic_ip_address": {
+      "why": "Label is 'elastic-ip', which does not name-match elastic_ip_address.",
+      "resource_type_filter": "ec2:elastic-ip",
+      "arn_templates": [
+        "arn:${Partition}:ec2:${Region}:${Account}:elastic-ip/${AllocationId}"
+      ]
+    },
+    "ec2:vpc_endpoint_service_configuration": {
+      "why": "Label is 'vpc-endpoint-service', which does not name-match vpc_endpoint_service_configuration.",
+      "resource_type_filter": "ec2:vpc-endpoint-service",
+      "arn_templates": [
+        "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${ServiceId}"
+      ]
+    },
+    "backup:backup_vault": {
+      "why": "Measured in us-west-2 against a real vault: 'backup:backup-vault' returns it while the grammar-derived 'backup:backupvault' returns nothing, so the Tagging API type mirrors the ARN's resource segment.",
+      "resource_type_filter": "backup:backup-vault",
+      "arn_templates": [
+        "arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}"
+      ]
+    },
+    "backup:backup_plan": {
+      "why": "Measured the same way as backup:backup_vault: 'backup:backup-plan' returns a real plan and 'backup:backupplan' returns nothing.",
+      "resource_type_filter": "backup:backup-plan",
+      "arn_templates": [
+        "arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}"
+      ]
+    },
+    "lambda:event_source_mapping": {
+      "why": "Derived from the rule measured on the two backup kinds, that the Tagging API type mirrors the ARN's resource segment; not independently measured.",
+      "resource_type_filter": "lambda:event-source-mapping",
+      "arn_templates": [
+        "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}"
+      ]
+    },
+    "ssm:resource_data_sync": {
+      "why": "Derived from the rule measured on the two backup kinds; not independently measured.",
+      "resource_type_filter": "ssm:resource-data-sync",
+      "arn_templates": [
+        "arn:${Partition}:ssm:${Region}:${Account}:resource-data-sync/${SyncName}"
+      ]
+    },
+    "networkfirewall:firewall_policy": {
+      "why": "Derived from the rule measured on the two backup kinds; not independently measured.",
+      "resource_type_filter": "network-firewall:firewall-policy",
+      "arn_templates": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy/${Name}"
+      ]
+    },
+    "mq:broker": {
+      "why": "The broker ARN carries the name AND a generated id. Only the id identifies the broker, so the template names both segments and lets brokerID bind to the leaf.",
+      "resource_type_filter": "mq:broker",
+      "arn_templates": [
+        "arn:${Partition}:mq:${Region}:${Account}:broker:${BrokerName}:${BrokerId}"
+      ]
+    },
+    "ecs:task_definition": {
+      "why": "A task definition ARN ends in :${Revision}, which is not part of ACK's identifier (it keys by family). The template names the revision segment so it is consumed rather than mistaken for the family.",
+      "resource_type_filter": "ecs:task-definition",
+      "arn_templates": [
+        "arn:${Partition}:ecs:${Region}:${Account}:task-definition/${Family}:${Revision}"
+      ]
+    },
+    "eventbridge:rule": {
+      "why": "ACK's 'eventbridge' is the AWS namespace 'events', so a filter built from the ACK service name matches nothing. The grammar splits rules into rule-on-default-event-bus and rule-on-custom-event-bus, neither of which name-matches 'rule'; both shapes are listed here with ${Name} spelled identically so the required key binds in each, and ${EventBusName} lets the controller's optional eventBusName field bind on the custom-bus shape.",
+      "resource_type_filter": "events:rule",
+      "arn_templates": [
+        "arn:${Partition}:events:${Region}:${Account}:rule/${Name}",
+        "arn:${Partition}:events:${Region}:${Account}:rule/${EventBusName}/${Name}"
+      ]
+    },
+    "prometheusservice:rule_groups_namespace": {
+      "why": "ACK's 'prometheusservice' is the AWS namespace 'aps', and the label is the unseparated 'rulegroupsnamespace'.",
+      "resource_type_filter": "aps:rulegroupsnamespace",
+      "arn_templates": [
+        "arn:${Partition}:aps:${Region}:${Account}:rulegroupsnamespace/${WorkspaceId}/${Name}"
+      ]
+    },
+    "apigatewayv2:api": {
+      "why": "The Tagging API type is the ARN's resource path with identifier segments removed, not the grammar's label. Measured in us-west-2: 'apigateway:apis' returns the API while 'apigateway:api', 'apigateway:/apis', 'apigateway:restapis' and 'apigateway:restapi' return nothing.",
+      "resource_type_filter": "apigateway:apis",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}"
+      ]
+    },
+    "apigatewayv2:stage": {
+      "why": "The second measured case, which established that nested kinds keep the parent segment: 'apigateway:apis/stages' returns exactly the stage, while 'apigateway:stage' and 'apigateway:stages' return nothing.",
+      "resource_type_filter": "apigateway:apis/stages",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/stages/${StageName}"
+      ]
+    },
+    "apigatewayv2:route": {
+      "why": "Derived from the rule confirmed on api and stage, not independently measured. The cross-check in test/integration proves or disproves it in any account holding one.",
+      "resource_type_filter": "apigateway:apis/routes",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/routes/${RouteId}"
+      ]
+    },
+    "apigatewayv2:authorizer": {
+      "why": "Derived from the rule confirmed on api and stage; not independently measured.",
+      "resource_type_filter": "apigateway:apis/authorizers",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/authorizers/${AuthorizerId}"
+      ]
+    },
+    "apigatewayv2:deployment": {
+      "why": "Derived from the rule confirmed on api and stage; not independently measured.",
+      "resource_type_filter": "apigateway:apis/deployments",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/deployments/${DeploymentId}"
+      ]
+    },
+    "apigatewayv2:integration": {
+      "why": "Derived from the rule confirmed on api and stage; not independently measured.",
+      "resource_type_filter": "apigateway:apis/integrations",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/apis/${ApiId}/integrations/${IntegrationId}"
+      ]
+    },
+    "apigatewayv2:domain_name": {
+      "why": "Derived from the rule confirmed on api and stage; not independently measured.",
+      "resource_type_filter": "apigateway:domainnames",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}"
+      ]
+    },
+    "apigatewayv2:api_mapping": {
+      "why": "Derived from the rule confirmed on api and stage; not independently measured. Nests under /domainnames/, not /apis/.",
+      "resource_type_filter": "apigateway:domainnames/apimappings",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/apimappings/${ApiMappingId}"
+      ]
+    },
+    "apigatewayv2:vpc_link": {
+      "why": "Derived from the rule confirmed on api and stage; not independently measured.",
+      "resource_type_filter": "apigateway:vpclinks",
+      "arn_templates": [
+        "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}"
+      ]
+    },
+    "elbv2:load_balancer": {
+      "why": "The grammar publishes classic, application, network and gateway load balancers as separate types, and 'load_balancer' exact-matches the classic one \u2014 whose shape no v2 load balancer ARN takes. The three v2 shapes are listed here; the classic shape is deliberately omitted because the ACK elbv2 controller cannot manage a classic ELB, so one returned by the shared type filter must be skipped rather than adopted.",
+      "resource_type_filter": "elasticloadbalancing:loadbalancer",
+      "arn_templates": [
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}",
+        "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/gwy/${LoadBalancerName}/${LoadBalancerId}"
+      ]
+    }
+  },
+  "unsupported": {
+    "documentdb:db_cluster": {
+      "why": "DocumentDB resources are rds:* ARNs, and a DocumentDB cluster ARN is byte-identical in shape to an Aurora one \u2014 'arn:aws:rds:REGION:ACCOUNT:cluster:NAME'. The distinguishing field is Engine, which the ARN does not carry, so a GetResources query scoped to rds:cluster returns both and nothing downstream can tell them apart. Left supported, adopt would emit documentdb CRs for RDS clusters. Restoring it needs a DescribeDBClusters engine check, not an ARN rule.",
+      "reason": "ARN shape indistinguishable from rds:* (engine not encoded in the ARN)"
+    },
+    "documentdb:db_instance": {
+      "why": "Same as documentdb:db_cluster \u2014 rds:db ARNs are shared with RDS instances and Engine is not in the ARN.",
+      "reason": "ARN shape indistinguishable from rds:* (engine not encoded in the ARN)"
+    },
+    "documentdb:db_subnet_group": {
+      "why": "Same as documentdb:db_cluster \u2014 rds:subgrp ARNs are shared with RDS subnet groups and Engine is not in the ARN.",
+      "reason": "ARN shape indistinguishable from rds:* (engine not encoded in the ARN)"
+    },
+    "sagemaker:app": {
+      "why": "The published grammar has one form, 'app/${DomainId}/${UserProfileName}/${AppType}/${AppName}', but an app hosted on a space reuses that exact shape with the space name in the second segment \u2014 arn:aws:sagemaker:us-west-2:111122223333:app/d-abc/my-space/JupyterLab/default. Nothing in the ARN says which parent it is, so the userProfileName binding would name a space that no user profile has. DescribeApp needs UserProfileName or SpaceName, so dropping the binding does not help either. Restoring it needs a DescribeApp call to read the real parent.",
+      "reason": "the ARN does not say whether the parent is a user profile or a space (needs describe)"
+    },
+    "wafv2:ip_set": {
+      "why": "Measured in us-west-2 against a real IP set: the bare 'wafv2' filter returns it while 'wafv2:ipset', 'wafv2:regional/ipset', 'wafv2:global/ipset' and 'wafv2:ip-set' all return nothing. The ARN also spells the scope lowercase where ACK requires the SDK enum REGIONAL, so restoring this needs a bare-service filter plus a transform in bindings.",
+      "reason": "the Tagging API indexes wafv2 only per-service, and the ARN's scope segment does not match the value ACK requires"
+    },
+    "wafv2:web_acl": {
+      "why": "Same as wafv2:ip_set: service-granularity indexing, and the same scope-segment mismatch.",
+      "reason": "the Tagging API indexes wafv2 only per-service, and the ARN's scope segment does not match the value ACK requires"
+    },
+    "wafv2:rule_group": {
+      "why": "Same service-granularity indexing as wafv2:ip_set, though this kind binds only 'name' so the scope mismatch does not apply. A bare 'wafv2' filter would work but over-matches every other wafv2 kind, and nothing yet distinguishes an expected over-match from a real failure.",
+      "reason": "the Tagging API indexes wafv2 only per-service, which over-matches other wafv2 kinds"
+    },
+    "apigatewayv2:api": {
+      "why": "Measured: the Tagging API treats the type filter as a prefix, so 'apigateway:apis' returns an API AND its stages, and a stage ARN cannot match the API template. Restoring this needs the resolver to tell a sibling caught by a prefix filter from a shape it cannot handle.",
+      "reason": "the apigateway:apis filter also returns stage ARNs, which cannot be told apart from an unresolvable API"
+    },
+    "apigatewayv2:route": {
+      "why": "Measured: apigatewayv2 TagResource accepts an /apis/{id}/stages/{name} ARN (NotFoundException for a bogus one) but rejects /apis/{id}/routes/{id} with 'Invalid input resource arn', so a route cannot carry tags.",
+      "reason": "API Gateway does not support tags on routes, so they cannot be discovered by tag"
+    },
+    "apigatewayv2:integration": {
+      "why": "Measured alongside apigatewayv2:route: TagResource rejects an /integrations/{id} ARN as invalid.",
+      "reason": "API Gateway does not support tags on integrations, so they cannot be discovered by tag"
+    },
+    "apigatewayv2:authorizer": {
+      "why": "Measured alongside apigatewayv2:route: TagResource rejects an /authorizers/{id} ARN as invalid.",
+      "reason": "API Gateway does not support tags on authorizers, so they cannot be discovered by tag"
+    },
+    "apigatewayv2:deployment": {
+      "why": "Measured alongside apigatewayv2:route: TagResource rejects a /deployments/{id} ARN as invalid.",
+      "reason": "API Gateway does not support tags on deployments, so they cannot be discovered by tag"
+    },
+    "apigatewayv2:api_mapping": {
+      "why": "Measured alongside apigatewayv2:route: TagResource rejects an /apimappings/{id} ARN as invalid.",
+      "reason": "API Gateway does not support tags on API mappings, so they cannot be discovered by tag"
+    },
+    "eventbridge:archive": {
+      "why": "Measured: events TagResource succeeds on a rule ARN but fails on an archive ARN with UnknownOperationException, and ListTagsForResource fails the same way, so an archive cannot carry tags.",
+      "reason": "EventBridge does not support tags on archives, so they cannot be discovered by tag"
+    },
+    "lambda:version": {
+      "why": "Measured in us-west-2: GetResources scoped to lambda:function returns only unqualified function ARNs, so a version's ':${Version}' leaf never appears.",
+      "reason": "the Tagging API returns only unqualified function ARNs, so a version is never discoverable by tag"
+    },
+    "lambda:alias": {
+      "why": "Same as lambda:version: an alias ARN's ':${Name}' leaf never appears in a GetResources result.",
+      "reason": "the Tagging API returns only unqualified function ARNs, so an alias is never discoverable by tag"
+    },
+    "lambda:function_url_config": {
+      "why": "Its template was the plain function ARN, identical to lambda:function's, so adopt emitted a CR for every tagged function whether or not a URL config existed.",
+      "reason": "shares the function's ARN, so a tag query cannot tell a function that has a URL config from one that does not"
+    },
+    "iam:role": {
+      "why": "Measured: a tag key carried by both an IAM role and several IAM policies returns only the policies from GetResources in us-east-1 and nothing in us-west-2, so the Tagging API does not index roles.",
+      "reason": "the Tagging API does not index IAM roles"
+    },
+    "iam:service_linked_role": {
+      "why": "Roles are not indexed at all, and an SLR ARN additionally embeds a path ('role/aws-service-role/<service>/<name>') that template placeholders cannot capture.",
+      "reason": "the Tagging API does not index IAM roles"
+    },
+    "iam:user": {
+      "why": "Measured alongside iam:role: the iam:user filter returns nothing in us-east-1 or us-west-2, and only IAM policies appear under the bare iam filter.",
+      "reason": "the Tagging API does not index IAM users"
+    },
+    "iam:group": {
+      "why": "Measured alongside iam:role: the iam:group filter returns nothing in either region.",
+      "reason": "the Tagging API does not index IAM groups"
+    },
+    "iam:instance_profile": {
+      "why": "Measured alongside iam:role: the iam:instance-profile filter returns nothing in either region.",
+      "reason": "the Tagging API does not index IAM instance profiles"
+    },
+    "kafka:serverless_cluster": {
+      "why": "Shares the kafka:cluster filter and ARN shape with kafka:cluster, and DescribeClusterV2 serves both types without either resource guarding on ClusterType.",
+      "reason": "shares kafka:cluster ARNs with kafka:Cluster, which the ARN cannot distinguish"
+    },
+    "prometheusservice:alert_manager_definition": {
+      "why": "Its template was the bare workspace ARN, identical to prometheusservice:workspace's, so adopt emitted a CR per workspace whether or not a definition existed.",
+      "reason": "identified by its workspace ARN, so a tag query cannot tell a workspace that has one from a workspace that does not"
+    },
+    "prometheusservice:logging_configuration": {
+      "why": "Same as prometheusservice:alert_manager_definition: one per workspace, no ARN of its own.",
+      "reason": "identified by its workspace ARN, so a tag query cannot tell a workspace that has one from a workspace that does not"
+    },
+    "ecs:service": {
+      "why": "The cluster is in the ARN but ecs-controller declares 'cluster' optional and the generator binds only required keys, so DescribeServices falls back to the 'default' cluster.",
+      "reason": "the ARN carries the cluster but the controller declares it optional, so adoption would target the default cluster"
+    },
+    "apigateway:api_integration_response": {
+      "why": "A response is a child of its REST API's integration; only the API itself is indexed by the Tagging API.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "apigateway:api_method_response": {
+      "why": "A response is a child of its REST API's method; only the API itself is indexed by the Tagging API.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "apigateway:authorizer": {
+      "why": "An authorizer is a child of its REST API and carries no tags of its own.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "apigateway:deployment": {
+      "why": "A deployment is a child of its REST API and carries no tags of its own.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "apigateway:integration": {
+      "why": "An integration is a child of its REST API and carries no tags of its own.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "apigateway:method": {
+      "why": "A method is a child of its REST API and carries no tags of its own.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "apigateway:resource": {
+      "why": "A resource path is a child of its REST API and carries no tags of its own.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "apigateway:stage": {
+      "why": "The Tagging API indexes only the REST API; a v1 stage never appears in GetResources results.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "athena:prepared_statement": {
+      "why": "A prepared statement lives inside its workgroup and carries no tags of its own.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "backup:backup_selection": {
+      "why": "A selection is a child of its backup plan and carries no tags of its own.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "efs:mount_target": {
+      "why": "Mount targets carry no tags; the file system does.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "kms:grant": {
+      "why": "Grants carry no tags; the key does.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "route53:record_set": {
+      "why": "Record sets carry no tags; the hosted zone does.",
+      "reason": "sub-resource not independently taggable"
+    },
+    "s3files:mount_target": {
+      "why": "Mount targets carry no tags; the file system does.",
+      "reason": "sub-resource not independently taggable"
+    }
+  },
+  "bindings": {
+    "ec2:network_acl.id": {
+      "why": "The grammar calls this segment ${NaclId}. 'nacl' abbreviates NetworkACL, which no normalization recovers, so this cannot be matched by name \u2014 but it is the only placeholder in the template and it is the network ACL's ID. Checked against arn:aws:ec2:us-west-2:111122223333:network-acl/acl-0abc123.",
+      "from": "${NaclId}"
+    },
+    "organizations:account.accountID": {
+      "why": "An Organizations account ARN's envelope account is the management account while ACK's accountID is the member account in the path, so the generic accountID-reads-${Account} rule names the wrong account.",
+      "from": "${AccountId}"
+    },
+    "organizations:organizational_unit.id": {
+      "why": "The template writes the 'ou-' prefix as a literal (ou/o-${OrganizationId}/ou-${OrganizationalUnitId}), so the capture holds only the part after it while ACK's id is the whole OU id. Checked against arn:aws:organizations::111122223333:ou/o-exampleorg/ou-ab12-cdef3456, whose id is ou-ab12-cdef3456 \u2014 a bare ${OrganizationalUnitId} would emit ab12-cdef3456 and adopt nothing.",
+      "from": "ou-${OrganizationalUnitId}"
+    }
+  }
+}

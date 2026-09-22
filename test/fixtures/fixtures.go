@@ -165,7 +165,10 @@ func createECRRepository(ctx context.Context, t *testing.T, f *Fixtures) (string
 			&ecr.DeleteRepositoryInput{RepositoryName: aws.String(name), Force: true})
 		harness.CleanupErr(t, derr, "ecr repository "+name)
 	})
-	return aws.ToString(out.Repository.RepositoryArn), map[string]string{"name": name}
+	return aws.ToString(out.Repository.RepositoryArn), map[string]string{
+		"name":       name,
+		"registryID": aws.ToString(out.Repository.RegistryId),
+	}
 }
 
 func createDynamoTable(ctx context.Context, t *testing.T, f *Fixtures) (string, map[string]string) {

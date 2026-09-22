@@ -1,0 +1,11 @@
+{
+  "Name": "firehose",
+  "Resources": [
+    {
+      "Name": "deliverystream",
+      "ARNFormats": [
+        "arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}"
+      ]
+    }
+  ]
+}

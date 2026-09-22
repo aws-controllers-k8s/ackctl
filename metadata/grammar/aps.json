@@ -1,0 +1,35 @@
+{
+  "Name": "aps",
+  "Resources": [
+    {
+      "Name": "anomalydetector",
+      "ARNFormats": [
+        "arn:${Partition}:aps:${Region}:${Account}:anomalydetector/${WorkspaceId}/${AnomalyDetectorId}"
+      ]
+    },
+    {
+      "Name": "cluster",
+      "ARNFormats": [
+        "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}"
+      ]
+    },
+    {
+      "Name": "rulegroupsnamespace",
+      "ARNFormats": [
+        "arn:${Partition}:aps:${Region}:${Account}:rulegroupsnamespace/${WorkspaceId}/${Namespace}"
+      ]
+    },
+    {
+      "Name": "scraper",
+      "ARNFormats": [
+        "arn:${Partition}:aps:${Region}:${Account}:scraper/${ScraperId}"
+      ]
+    },
+    {
+      "Name": "workspace",
+      "ARNFormats": [
+        "arn:${Partition}:aps:${Region}:${Account}:workspace/${WorkspaceId}"
+      ]
+    }
+  ]
+}
